@@ -1,0 +1,104 @@
+---
+title: "Work Shop Preparation"
+author: "Zachary M. Smith"
+date: "February 19, 2019"
+output:
+  html_document: default
+---
+
+# Installation Links
+
+Please install R and RStudio by following the links below.
+```{r, echo=FALSE}
+urls <- c("https://cran.r-project.org/bin/windows/base/",
+          "https://www.rstudio.com/products/rstudio/download/#download")
+link.df <- data.frame(
+  Software = c("R", "RStudio"),
+  Link = paste0("[", urls, "](", urls, ")")
+)
+
+knitr::kable(link.df)
+```
+
+## Updating Software and Packages
+
+### R
+
+For Windows Operating Systems, run the following code in the RGui, __NOT__ in RStudio. The RGui should be installed when you install R. On my Windows machine, I access RGui by clicking on the R program file-- my current file name is "R x64 3.6.2".
+
+<center>
+<video width="960" height="540" controls>
+  <source src="images/2019-12-23_14-11-24.mp4" type="video/mp4">
+</video>
+</center>
+
+Once you have the RGui open, copy and paste the R code below into the R Console window. Make sure R Studio is closed before running this code within the RGui. Hit enter once to install the __installr__ package. Hit enter a second time to run the __installer__ package function `updateR()` and follow the instructions.
+
+This code was copied from: https://www.r-statistics.com/2013/03/updating-r-from-r-on-windows-using-the-installr-package/). 
+```{r, eval=FALSE}
+# installing/loading the package:
+if(!require(installr)) {
+install.packages("installr");
+require(installr)
+} #load / install+load installr
+
+# using the package:
+updateR()
+```
+
+### RStudio
+
+1. Open RStudio
+2. Click on "Help" on the toolbar
+3. Click on "Check for Updates"
+4. Follow instructions 
+
+<center>
+<video width="960" height="540" controls>
+  <source src="images/rstudio_updates_final.mp4" type="video/mp4">
+</video>
+</center>
+
+### R-Packages
+
+1. Open RStudio
+2. Click on "Tools" on the toolbar
+3. Click on "Check for Package Updates…"
+4. Follow instructions 
+
+<center>
+<video width="960" height="540" controls>
+  <source src="images/update_packages.mp4" type="video/mp4">
+</video>
+</center>
+
+#### Packages for Workshop
+
+Please run the following code within RStudio to make sure you have all of necessary packages for this workshop installed.
+
+1. Open RStudio
+2. Copy the following code
+
+```{r, eval=FALSE}
+package.vec <- c("tidyverse", "lubridate",
+                 "knitr", "rmarkdown", "markdown", "bookdown", "caTools", "bitops",
+                 "DT", "leaflet", "shiny", "jsonlite", "plotly",
+                 "data.table", "rprojroot", "viridis")
+
+install.packages(package.vec)
+```
+
+3. Paste the code into the Console within RStudio
+4. Hit Enter
+    + If prompted with "Do you want to restart R prior to installing?", select "Yes"
+    + If prompted again then select "No"
+5. The packages should begin to install. This may take some time.
+
+
+<center>
+<video width="960" height="540" controls>
+  <source src="images/install_workshop_packages.mp4" type="video/mp4">
+</video>
+</center>
+
+
