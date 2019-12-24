@@ -1,19 +1,27 @@
----
-title: "Work Shop Preparation"
+--- 
+title: "R Markdown Crash Course"
 author: "Zachary M. Smith"
-date: "February 19, 2019"
+date: "`r Sys.Date()`"
+site: "bookdown::bookdown_site"
 output:
-  html_document: default
+  bookdown::gitbook: default
+documentclass: book
+biblio-style: apalike
+link-citations: yes
 ---
 
-# Installation Links
+# Preparation for Workshop
 
-Please install R and RStudio by following the links below.
+Please follow the instructions in this section prior to attending the 2020 NABs conference.
+
+## Install R and R Studio
+
+Please install R and R Studio by following the links below.
 ```{r, echo=FALSE}
 urls <- c("https://cran.r-project.org/bin/windows/base/",
           "https://www.rstudio.com/products/rstudio/download/#download")
 link.df <- data.frame(
-  Software = c("R", "RStudio"),
+  Software = c("R", "R Studio"),
   Link = paste0("[", urls, "](", urls, ")")
 )
 
@@ -24,7 +32,7 @@ knitr::kable(link.df)
 
 ### R
 
-For Windows Operating Systems, run the following code in the RGui, __NOT__ in RStudio. The RGui should be installed when you install R. On my Windows machine, I access RGui by clicking on the R program file-- my current file name is "R x64 3.6.2".
+For Windows Operating Systems, run the following code in the RGui, __NOT__ in R Studio. The RGui should be installed when you install R. On my Windows machine, I access RGui by clicking on the R program file-- my current file name is "R x64 3.6.2".
 
 <center>
 <video width="960" height="540" controls>
@@ -46,9 +54,9 @@ require(installr)
 updateR()
 ```
 
-### RStudio
+### R Studio
 
-1. Open RStudio
+1. Open R Studio
 2. Click on "Help" on the toolbar
 3. Click on "Check for Updates"
 4. Follow instructions 
@@ -61,7 +69,7 @@ updateR()
 
 ### R-Packages
 
-1. Open RStudio
+1. Open R Studio
 2. Click on "Tools" on the toolbar
 3. Click on "Check for Package Updates…"
 4. Follow instructions 
@@ -72,11 +80,11 @@ updateR()
 </video>
 </center>
 
-#### Packages for Workshop
+#### Packages for the Workshop
 
-Please run the following code within RStudio to make sure you have all of necessary packages for this workshop installed.
+Please run the following code within R Studio to make sure you have all of necessary packages for this workshop installed.
 
-1. Open RStudio
+1. Open R Studio
 2. Copy the following code
 
 ```{r, eval=FALSE}
@@ -88,7 +96,7 @@ package.vec <- c("tidyverse", "lubridate",
 install.packages(package.vec)
 ```
 
-3. Paste the code into the Console within RStudio
+3. Paste the code into the Console within R Studio
 4. Hit Enter
     + If prompted with "Do you want to restart R prior to installing?", select "Yes"
     + If prompted again then select "No"

@@ -1,0 +1,13 @@
+--- 
+title: "R Markdown Crash Course"
+author: "Zachary M. Smith"
+date: "`r Sys.Date()`"
+site: "bookdown::bookdown_site"
+output:
+  bookdown::gitbook: default
+documentclass: book
+biblio-style: apalike
+link-citations: yes
+---
+
+# Test

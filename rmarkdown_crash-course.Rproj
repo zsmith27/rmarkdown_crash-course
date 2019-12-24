@@ -11,3 +11,6 @@ Encoding: UTF-8
 
 RnwWeave: Sweave
 LaTeX: pdfLaTeX
+
+BuildType: Website
+WebsitePath: C:/Users/zmsmith/OneDrive - New York State Office of Information Technology Services/project/rmarkdown_crash-course
