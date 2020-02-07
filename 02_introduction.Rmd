@@ -1,0 +1,72 @@
+---
+title: "Untitled"
+author: "Zachary M. Smith"
+date: "2/7/2020"
+output: html_document
+---
+
+# Introduction
+
+<center>
+![](images/hex_symbols/rmarkdown.png){width=200px} 
+</center>
+
+* __R Markdown: The Definitive Guide:__ https://bookdown.org/yihui/rmarkdown/
+* __RStudio Lessons:__ https://rmarkdown.rstudio.com/lesson-1.html
+
+Markdown is a markup language for developing and formating documents. R Markdown is an R-package that allows the user to integrate text, R-code, and R-code output into a well formatted document (e.g., HTML, MS Word, PDF). 
+
+<center>
+![](images/rmarkdown/output_types.png)
+</center>
+
+My recommendation is to create an R Markdown file for every R-project. The intention is to document as much of the project as possible.  R Markdown provides a more readable document, with better descriptions of how and why an activity was performed, than a standard R script with a few commented lines. 
+
+## Benefits
+
+* __Reproducible:__ Document steps of an investigation or scientific study [reproducibility crisis](https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970).
+<center>
+![](images/rmarkdown/reproducible.png){width=400}
+</center>
+
+* __Collaborative:__ Easy to work with others on investigations and scientific studies.
+<center>
+![](images/rmarkdown/markdown_github.png){width=400}
+</center>
+
+* __Efficient:__ Generate and update reports automatically (e.g., HTML, MS Word, and PDF).
+<center>
+![](images/rmarkdown/parameterized.png){width=400}
+</center>
+
+* __Engaging:__ Embed interactive figures, maps, and tables in reports (HTML only).
+    + __Source:__ https://plotly-book.cpsievert.me/images/gapminder-highlight-animation.gif
+
+<center>
+![](https://plotly-book.cpsievert.me/images/gapminder-highlight-animation.gif){width=400}
+</center>
+
+## Basic Overview
+
+Use markdown syntax, some of which is shown in the table below, to format the document.
+
+* __Source:__ https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
+
+<center>
+![](images/rmarkdown/reference.png){width=400}
+</center>
+
+Once the document is complete (formated with markdown syntax with integrated R code) the document can be knit (rendered) using the package __knitr__.
+
+Here is a simple example showing the raw R Markdown (Rmd) file before knitting (rendering) and after knitting. The colors on the far left are ther to help identify elements pre- and post-knitting.
+
+<center>
+![](images/rmarkdown/raw_to_rendered.png){width=400}
+</center>
+
+
+R is not the only language supported by R Markdown. The following languages and more can be integrated into an R Markdown file.
+
+<center>
+![](images/rmarkdown/languages.png){width=400}
+</center>

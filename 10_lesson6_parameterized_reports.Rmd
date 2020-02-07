@@ -1,0 +1,8 @@
+---
+title: "Untitled"
+author: "Zachary M. Smith"
+date: "2/7/2020"
+output: html_document
+---
+
+# Lesson 6: Parameterized Reports

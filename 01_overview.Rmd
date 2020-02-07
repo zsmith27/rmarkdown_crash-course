@@ -1,0 +1,34 @@
+---
+title: "Untitled"
+author: "Zachary M. Smith"
+date: "2/7/2020"
+output: html_document
+---
+
+# Overview
+
+A large portion of report writing is often consumed by tedious edits and a disjunct workflow. The R-package, R markdown, provides a centralized workflow and reproducible framework, allowing you to focus your time and energy on the content of the report. This workshop offers you hands-on experience developing reports with R markdown and is intended for individuals with at least a basic understanding of the statistical programming language, R. You will learn basic markdown syntax, formatting tips, how to compile your report as several document types (e.g., HTML, MS Word, and PDF), how to automate the production of tables and figures, and how to configure a report template that can be used automate the production of many reports. There is time dedicated at the end of the workshop for you to bring your own dataset and begin developing an R markdown document using lessons learned throughout the workshop. Overall, this workshop will provide you with the working knowledge of R markdown enabling you to communicate your data efficiently and effectively.
+
+
+## AGENDA
+- TUESDAY, MARCH 3, 2020 (10:00-4:00)
+  * 10:00 – 10:15 R Markdown: Introduction
+  * 10:15 – 10:30 R and R Studio
+  * 10:30 – 10:45 Project Development
+  * 10:45 – 11:30 Lesson 1: Basic Syntax
+  * 11:30 – 12:00 Lesson 2: YAML Headers
+  * 12:00 – 1:00 LUNCH
+  * 1:00 – 1:30 Lesson 3: Document Types
+  * 1:30 – 2:30 Lesson 4: Code Chunks
+  * 2:30 – 2:40 BREAK
+  * 2:40 – 3:40 Lesson 5: Child Documents
+  * 3:40 – 4:00 Closing Remarks
+- WEDNESDAY, MARCH 4, 2020 (9:00-12:00)
+  * LIGHT BREAKFAST
+  * 9:00 – 9:15 Recap
+  * 9:15 – 10:20 Lesson 6: Parameterized Reports
+  * 10:20 – 10:30 BREAK
+  * 10:30 – 11:50 Open Practice Session (bring your own data)
+  * 11:50 – 12:00 Closing Remarks
+  * 12:00 – 1:00 (LUNCH ON YOUR OWN – CONFERENCE BEGINS @ 1:00)
+
