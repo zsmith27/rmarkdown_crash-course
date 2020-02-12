@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>R Markdown Crash Course</title>
-  <meta name="description" content="R Markdown Crash Course" />
+  <title>5 R and R Studio | R Markdown Crash Course</title>
+  <meta name="description" content="5 R and R Studio | R Markdown Crash Course" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="R Markdown Crash Course" />
+  <meta property="og:title" content="5 R and R Studio | R Markdown Crash Course" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R Markdown Crash Course" />
+  <meta name="twitter:title" content="5 R and R Studio | R Markdown Crash Course" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="preparation-for-workshop.html"/>
+<link rel="prev" href="introduction.html"/>
+<link rel="next" href="r-project-development.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -196,23 +196,297 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">R Markdown Crash Course</h1>
-<p class="author"><em>Zachary M. Smith</em></p>
-<p class="date"><em>2020-02-11</em></p>
+<div id="r-and-r-studio" class="section level1">
+<h1><span class="header-section-number">5</span> R and R Studio</h1>
+<div id="what-is-r" class="section level2">
+<h2><span class="header-section-number">5.1</span> What is R?</h2>
+<p>R is an open source programming language developed for statistical computing and graphic production. “R can be considered as a differenct implementation of S”, a language that was developed at Bell Laboratories (<a href="https://www.r-project.org/about.html" class="uri">https://www.r-project.org/about.html</a>).</p>
+<div id="benefits-of-using-r" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Benefits of Using R</h3>
+<ol style="list-style-type: decimal">
+<li><strong>Reproducibility:</strong> Standardized processes (e.g., functions, loops, documentation)
+<ul>
+<li>When using MS Excel processes are often spread across multiple sheets or calculations are performed haphazardly within a single sheet. In general, this makes it very hard to interpret processes performmed and to reproduce the process.</li>
+</ul></li>
+<li><strong>Power:</strong> Ability to perform simple and complex data manipulations, iterative processes, and calculations
+<ul>
+<li>Access to more than 10,000 packages on CRAN</li>
+<li>New packages are constantly being developed</li>
+<li>New features are contsantly being added to existing packages</li>
+</ul></li>
+</ol>
 </div>
-<div id="preface" class="section level1">
-<h1><span class="header-section-number">1</span> Preface</h1>
-<p>This document was developed for a workshop that I led at the 2020 Northeast Aquatic Biologists (NABs) conference. If you identify any issues or have any questions, please direct these questions to the GitHub issues page associated with the GitHub repository for this document (<a href="https://github.com/zsmith27/rmarkdown_crash-course/issues" class="uri">https://github.com/zsmith27/rmarkdown_crash-course/issues</a>).</p>
+<div id="r-packages-1" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> R Packages</h3>
+<p>R packages are extensions of base R that provide additional features or provide alternative functionality.</p>
+<ul>
+<li>Availability
+<ul>
+<li>CRAN (<a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a>)
+<ul>
+<li>The Comprehensive R Archive Network (CRAN)</li>
+<li>FTP and web servers that store R Packages</li>
+<li>Packages are rwquired to meet certain standards</li>
+</ul></li>
+<li>GitHub (<a href="https://github.com" class="uri">https://github.com</a>)
+<ul>
+<li>These packages are usually under development</li>
+<li>Contains development versions of many packages available on CRAN</li>
+</ul></li>
+<li>Custom (<a href="http://r-pkgs.had.co.nz/" class="uri">http://r-pkgs.had.co.nz/</a>)
+<ul>
+<li>You have the ability to create your own packages.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><img src="images/introduction/packages.png" width="700" /></p>
+</div>
+</div>
+<div id="rstudio" class="section level2">
+<h2><span class="header-section-number">5.2</span> RStudio</h2>
+<p>Open source integrated development environment (IDE) for R developed by R Studio.</p>
+<ul>
+<li>Edit scripts</li>
+<li>Run scripts</li>
+<li>Navigate files</li>
+<li>Organize projects</li>
+<li>Utilize version control (Git and Subversion)</li>
+<li>View static and interactive graphics</li>
+<li>And more…</li>
+</ul>
+<div id="create-a-new-script" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Create a New Script</h3>
+<ol style="list-style-type: decimal">
+<li>Click on the new document buttion:</li>
+</ol>
+<p><img src="images/rstudio/new_document_button.png" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Click on R Script:</li>
+</ol>
+<p><img src="images/rstudio/new_r_script_dropdown.png" width="150" /></p>
+</div>
+<div id="rstudio-overview" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> RStudio Overview</h3>
+<p>Once you have open an existing script or created a new script, following the instructions from the previous section, your RStudio should look similar to the following image. I have added labels to each of the windows.</p>
+<p><img src="images/rstudio/rstudio_pane_labels.png" /></p>
+<div id="source-window" class="section level4">
+<h4><span class="header-section-number">5.2.2.1</span> Source Window</h4>
+<p>This window appears when you open an exisiting R script or create a new R script <a href="r-and-r-studio.html#create-a-new-script">Create a New Script</a>. You will perform most of your write, edit, save, and execute your code.</p>
+<center>
+<img src="images/rstudio/source_tab.png" />
+</center>
+</div>
+<div id="console-window" class="section level4">
+<h4><span class="header-section-number">5.2.2.2</span> Console Window</h4>
+<p>Similar to the <a href="r-and-r-studio.html#source-window">Source Window</a>, code can also be executed in the console but it is not as easy to edit or save code written in the console window. Generally, I only write and execute code in the console window if I am just testing new code or want to quickly view data.</p>
+<p><img src="images/rstudio/console_tab.png" /></p>
+</div>
+<div id="environment-history-connections-build-and-git" class="section level4">
+<h4><span class="header-section-number">5.2.2.3</span> Environment, History, Connections, Build, and Git</h4>
+<p>This window pane includes many features. Here we will only focus on the <a href="r-and-r-studio.html#environment-tab">Environment Tab</a> but I will briefly review the other tabs available.</p>
+<ul>
+<li><strong>History Tab:</strong> view the order in which you have executed code.</li>
+<li><strong>Connections:</strong> connect to databases and show your connections to those databases.</li>
+<li><strong>Build:</strong> will only appear if you are building a custom package becuase it is used to compile the package and add it to your library.</li>
+<li><strong>Git:</strong> will only appear if you connect your [R Project] to Git (see [GitHub] section).</li>
+</ul>
+<div id="environment-tab" class="section level5">
+<h5><span class="header-section-number">5.2.2.3.1</span> Environment Tab</h5>
+<p>Objects created in the <a href="r-and-r-studio.html#source-window">Source Window</a> or the <a href="r-and-r-studio.html#console-window">Console Window</a> are stored in the global environment. The Environment tab allows you to view the objects stored in the global environment.</p>
+<p>You can read more about environments in Hadely Wickham’s Advanced R book available for free online (<a href="http://adv-r.had.co.nz/Environments.html" class="uri">http://adv-r.had.co.nz/Environments.html</a>).</p>
+<p>In the <a href="r-and-r-studio.html#source-window">Source Window</a> example, I loaded the <code>iris</code> data frame into the global environment. This data frame will appear within Environment tab. We can see that this data frame has 150 obs. (rows) and 5 variables (columns).</p>
+<center>
+<img src="images/rstudio/env_tab1.png" />
+</center>
+<p>If we click on the blue circle next to <code>iris</code>, we will be provided with a glimpse into the data frame. Below we can see the columns that make up the data frame, the type of data they represent, and the first view values in a given column. The first four columns, <code>Sepal.Length</code>, <code>Sepal.Width</code>, <code>Petal.Length</code>, and <code>Petal.Width</code>, are numeric (<code>num</code>) data type. The last column, <code>Species</code>, is a factor data type.</p>
+<center>
+<img src="images/rstudio/env_tab2.png" />
+</center>
+<p>If we click on the view table button.</p>
+<center>
+<img src="images/rstudio/view_table_button.png" width="100" />
+</center>
+<p>The data frame will open in a tab within the <a href="r-and-r-studio.html#source-window">Source Window</a>. Here we can scroll through and view all of the data within the <code>iris</code> data frame.</p>
+<center>
+<img src="images/rstudio/view_iris.png" />
+</center>
+<p>If we want to view a subset of data we can apply a global filter by filtering with…</p>
+<center>
+<img src="images/rstudio/global_filter.png" width="200" />
+</center>
+<p>or we can apply column specific fileters if we click the filter button.</p>
+<center>
+<img src="images/rstudio/filter_button.png" width="150" />
+</center>
+<p>The global environment can be cleared by using the clear button.</p>
+<center>
+<img src="images/rstudio/clear_button.png" width="100" />
+</center>
+<p>When your global environment has been cleared the Environment Tab will look like this…</p>
+<center>
+<img src="images/rstudio/empty_env.png" />
+</center>
+</div>
+</div>
+<div id="files-plots-packages-help-and-viewer" class="section level4">
+<h4><span class="header-section-number">5.2.2.4</span> Files, Plots, Packages, Help, and Viewer</h4>
+</div>
+<div id="files-tab" class="section level4">
+<h4><span class="header-section-number">5.2.2.5</span> Files Tab</h4>
+<ul>
+<li>Open R Scripts by clicking.</li>
+<li>View file structure without leaving RStudio.
+<ul>
+<li>Helpful for finding files to import or to verify a file exported.</li>
+</ul></li>
+<li>More beneficial if working in an R Project.</li>
+</ul>
+<center>
+<img src="images/rstudio/files_tab.png" />
+</center>
+</div>
+<div id="plots-tab" class="section level4">
+<h4><span class="header-section-number">5.2.2.6</span> Plots Tab</h4>
+<ul>
+<li>View plots created in script.</li>
+<li>You can manually export from this tab.
+<ul>
+<li>Generally recommended that you write script to do this (reproducible).</li>
+</ul></li>
+</ul>
+<center>
+<img src="images/rstudio/plots_tab.png" />
+</center>
+</div>
+<div id="packages-tab" class="section level4">
+<h4><span class="header-section-number">5.2.2.7</span> Packages Tab</h4>
+<ul>
+<li>View packages installed on your computer.</li>
+<li>Button to update installed packages.</li>
+</ul>
+<p><img src="images/rstudio/update_button.png" /></p>
+<ul>
+<li>Button to install new packages.</li>
+</ul>
+<p><img src="images/rstudio/install_button.png" /></p>
+<center>
+<img src="images/rstudio/packages_tab.png" />
+</center>
+</div>
+<div id="help-tab" class="section level4">
+<h4><span class="header-section-number">5.2.2.8</span> Help Tab</h4>
+<ul>
+<li><strong>General Structure:</strong> Description, Usage, Arguments, See Also, and Examples.</li>
+<li>Important to review to understand how the function works.</li>
+</ul>
+<center>
+<img src="images/rstudio/help_tab.png" />
+</center>
+</div>
+<div id="viewer-tab" class="section level4">
+<h4><span class="header-section-number">5.2.2.9</span> Viewer Tab</h4>
+<ul>
+<li>Similar to the <a href="r-and-r-studio.html#plots-tab">Plots Tab</a> but allows you to view interactive plots.</li>
+</ul>
+</div>
+</div>
+<div id="shortcuts" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> Shortcuts</h3>
+<p>A list of all RStudio shortcuts can be found here: <a href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts" class="uri">https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts</a></p>
+<p>You can also press <strong>Alt+Shift+K</strong> within RStudio to pull up a list of shortcuts.</p>
+<p><strong>Below are my favorite shortcuts:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Description</th>
+<th align="left">Windows…Linux</th>
+<th align="left">Mac</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Run Current Line/Selection</td>
+<td align="left">Ctrl+Enter</td>
+<td align="left">Command+Enter</td>
+</tr>
+<tr class="even">
+<td align="left">Insert Code Section</td>
+<td align="left">Ctrl+Shift+R</td>
+<td align="left">Command+Shift+R</td>
+</tr>
+<tr class="odd">
+<td align="left">Re-indent Lines</td>
+<td align="left">Ctrl+I</td>
+<td align="left">Command+I</td>
+</tr>
+<tr class="even">
+<td align="left">Reformat Selection</td>
+<td align="left">Ctrl+Shift+A</td>
+<td align="left">Command+Shift+A</td>
+</tr>
+<tr class="odd">
+<td align="left">Find and Replace</td>
+<td align="left">Ctrl+F</td>
+<td align="left">Command+F</td>
+</tr>
+<tr class="even">
+<td align="left">Undo</td>
+<td align="left">Ctrl+Z</td>
+<td align="left">Command+Z</td>
+</tr>
+<tr class="odd">
+<td align="left">Redo</td>
+<td align="left">Ctrl+Shift+Z</td>
+<td align="left">Command+Shift+Z</td>
+</tr>
+<tr class="even">
+<td align="left">Cut</td>
+<td align="left">Ctrl+X</td>
+<td align="left">Command+X</td>
+</tr>
+<tr class="odd">
+<td align="left">Copy</td>
+<td align="left">Ctrl+C</td>
+<td align="left">Command+C</td>
+</tr>
+<tr class="even">
+<td align="left">Paste</td>
+<td align="left">Ctrl+V</td>
+<td align="left">Command+V</td>
+</tr>
+<tr class="odd">
+<td align="left">Select All</td>
+<td align="left">Ctrl+A</td>
+<td align="left">Command+A</td>
+</tr>
+<tr class="even">
+<td align="left">Insert Pipe Operator</td>
+<td align="left">Ctrl+Shift+M</td>
+<td align="left">Command+Shift+M</td>
+</tr>
+<tr class="odd">
+<td align="left">Insert Code Chunk</td>
+<td align="left">Ctrl+Alt+I</td>
+<td align="left">Command+Option+I</td>
+</tr>
+<tr class="even">
+<td align="left">Restart R Session</td>
+<td align="left">Ctrl+Shift+F10</td>
+<td align="left">Command+Shift+F10</td>
+</tr>
+</tbody>
+</table>
 
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="preparation-for-workshop.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-project-development.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
