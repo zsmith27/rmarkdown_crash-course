@@ -1,0 +1,41 @@
+---
+title: "Untitled"
+author: "Zachary M. Smith"
+date: "2/7/2020"
+output: html_document
+---
+
+# Lesson 2: Rmd Creation
+
+
+
+##	Create a New Document
+
+1. Click on the new document button: 
+
+![](images/rstudio/new_document_button.png)
+
+2. Click on R Markdown:
+
+![](images/rmarkdown/rmarkdown_button.png){width=300px}
+
+3. Provide a "Title:", select the "Default Output Format:", and click "OK"
+
+![](images/rmarkdown/new_rmarkdown_window.png){width=400px}
+
+4. A new R Markdown document will appear with some instructions and example text/code.
+
+![](images/rmarkdown/new_rmarkdown_window.png){width=600px}
+
+##	Compile the Document
+
+![](images/rmarkdown/knit_button.png){width=160px}
+
+To view the html document, you must compile the document using Knit. The easiest way to knit a document is to navigate to and click on the Knit button (it looks like a ball of yarn) in the toolbar above the editor window. If a window appears saying “Install Required Packages” for R Markdown, install the necessary packages for knitting the document. The compiled file will be saved in the same directory as your Rmd file (your R Markdown file). I store the R Markdown file(s) in a sub-directory labeled “rmarkdown” within the R-project folder (rproject/markdown), which prevents the project directory from becoming cluttered.
+
+## Your Turn
+
+1. Create a new HTML Rmd file.
+2. Save the document to the "rmarkdown/sections" folder.
+3. Knit the default document produced by RStudio.
+

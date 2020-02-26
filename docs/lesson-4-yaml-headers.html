@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>R Markdown Crash Course</title>
-  <meta name="description" content="R Markdown Crash Course" />
+  <title>9 Lesson 4: YAML Headers | R Markdown Crash Course</title>
+  <meta name="description" content="9 Lesson 4: YAML Headers | R Markdown Crash Course" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="R Markdown Crash Course" />
+  <meta property="og:title" content="9 Lesson 4: YAML Headers | R Markdown Crash Course" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R Markdown Crash Course" />
+  <meta name="twitter:title" content="9 Lesson 4: YAML Headers | R Markdown Crash Course" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="preparation-for-workshop.html"/>
+<link rel="prev" href="lesson-3-basic-syntax.html"/>
+<link rel="next" href="lesson-4-code-chunks-and-inline-code.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -213,23 +213,84 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">R Markdown Crash Course</h1>
-<p class="author"><em>Zachary M. Smith</em></p>
-<p class="date"><em>2020-02-26</em></p>
+<div id="lesson-4-yaml-headers" class="section level1">
+<h1><span class="header-section-number">9</span> Lesson 4: YAML Headers</h1>
+<p><strong>YAML:</strong> YAML Ain’t Markup Language</p>
+<div id="standard" class="section level2">
+<h2><span class="header-section-number">9.1</span> Standard</h2>
+<center>
+<img src="images/rmarkdown/yaml_1.png" />
+</center>
 </div>
-<div id="preface" class="section level1">
-<h1><span class="header-section-number">1</span> Preface</h1>
-<p>This document was developed for a workshop that I led at the 2020 Northeast Aquatic Biologists (NABs) conference. If you identify any issues or have any questions, please direct these questions to the GitHub issues page associated with the GitHub repository for this document (<a href="https://github.com/zsmith27/rmarkdown_crash-course/issues" class="uri">https://github.com/zsmith27/rmarkdown_crash-course/issues</a>).</p>
+<div id="table-of-contents-toc" class="section level2">
+<h2><span class="header-section-number">9.2</span> Table of Contents (TOC)</h2>
+<center>
+<img src="images/rmarkdown/yaml_2.png" />
+</center>
+<div id="floating-table-of-contents-toc" class="section level3">
+<h3><span class="header-section-number">9.2.1</span> Floating Table of Contents (TOC)</h3>
+<center>
+<img src="images/rmarkdown/yaml_3.png" />
+</center>
+</div>
+</div>
+<div id="themes" class="section level2">
+<h2><span class="header-section-number">9.3</span> Themes</h2>
+<p>You can modify the YAML to specify the .theme of the document, which will change document styling (e.g., font type, color, size)</p>
+<p>The following link provides examples of some of the available R Markdown themes: <a href="https://www.datadreaming.org/post/r-markdown-theme-gallery/" class="uri">https://www.datadreaming.org/post/r-markdown-theme-gallery/</a></p>
+<center>
+<img src="images/rmarkdown/yaml_4.png" />
+</center>
+</div>
+<div id="code-folding" class="section level2">
+<h2><span class="header-section-number">9.4</span> Code Folding</h2>
+<p>Code folding refers to the HTML YAML option to hide code chunks by default, but enable the reader to click a button to show the underlying code chunk.</p>
+<div id="example-without-code-folding" class="section level3">
+<h3><span class="header-section-number">9.4.1</span> Example without Code Folding</h3>
+<center>
+<img src="images/rmarkdown/folding_non.png" />
+</center>
+</div>
+<div id="examples-with-code-folding" class="section level3">
+<h3><span class="header-section-number">9.4.2</span> Examples with Code Folding</h3>
+<div id="show" class="section level4">
+<h4><span class="header-section-number">9.4.2.1</span> Show</h4>
+<center>
+<img src="images/rmarkdown/folding_show.png" />
+</center>
+</div>
+<div id="hide" class="section level4">
+<h4><span class="header-section-number">9.4.2.2</span> Hide</h4>
+<center>
+<img src="images/rmarkdown/folding_hide.png" />
+</center>
+</div>
+</div>
+</div>
+<div id="ymlthis" class="section level2">
+<h2><span class="header-section-number">9.5</span> ymlthis</h2>
+<p><strong>ymlthis</strong> is an R package intended to make it easier for you to generate YAML headers. The package also includes an interactive addin that provides an intuitive user-interface for generating YAML headers.</p>
+<p>You can visit the following link to learn more about how to use ymlthis: []<a href="https://ymlthis.r-lib.org/" class="uri">https://ymlthis.r-lib.org/</a></p>
+</div>
+<div id="your-turn-3" class="section level2">
+<h2><span class="header-section-number">9.6</span> Your Turn</h2>
+<ol style="list-style-type: decimal">
+<li>Edit the YAML title and author and knit the document.</li>
+<li>Specify in the YAML that you want to include a table of contents and knit the document.</li>
+<li>Specify in the YAML that you want a floating table of contents and knit the document.</li>
+<li>Specify in the YAML that you want to change the theme to “journal” and knit the document.</li>
+</ol>
+<p><strong>Bonus:</strong> If you finish early, install <strong>ymlthis</strong> (<code>install.packages("ymlthis")</code>), navigate to the <strong>ymlthis</strong> addin, and try to re-create the YAML header from steps 1-4.</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="preparation-for-workshop.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lesson-3-basic-syntax.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lesson-4-code-chunks-and-inline-code.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

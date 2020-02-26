@@ -1,0 +1,12 @@
+---
+title: "Example"
+author: "Zachary M. Smith"
+date: "November 16, 2018"
+output: 
+  html_document:
+    code_folding: hide
+---
+
+```{r}
+2 + 2
+```

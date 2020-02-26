@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>R Markdown Crash Course</title>
-  <meta name="description" content="R Markdown Crash Course" />
+  <title>10 Lesson 4: Code Chunks and Inline Code | R Markdown Crash Course</title>
+  <meta name="description" content="10 Lesson 4: Code Chunks and Inline Code | R Markdown Crash Course" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="R Markdown Crash Course" />
+  <meta property="og:title" content="10 Lesson 4: Code Chunks and Inline Code | R Markdown Crash Course" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R Markdown Crash Course" />
+  <meta name="twitter:title" content="10 Lesson 4: Code Chunks and Inline Code | R Markdown Crash Course" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="preparation-for-workshop.html"/>
+<link rel="prev" href="lesson-4-yaml-headers.html"/>
+<link rel="next" href="lesson-5-child-documents.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -213,23 +213,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">R Markdown Crash Course</h1>
-<p class="author"><em>Zachary M. Smith</em></p>
-<p class="date"><em>2020-02-26</em></p>
+<div id="lesson-4-code-chunks-and-inline-code" class="section level1">
+<h1><span class="header-section-number">10</span> Lesson 4: Code Chunks and Inline Code</h1>
+<div id="code-chunks" class="section level2">
+<h2><span class="header-section-number">10.1</span> Code Chunks</h2>
+<p>To insert a code chunk, press <strong>Ctrl + Alt + i</strong> in the source pane (top left pane in the default settings of Studio). A code chunk will appear:</p>
+<p><img src="images/rmarkdown/code_chunk.png" />
+Inside the code chunk you can write and run R-code. If you print the output of your R-code it will appear below the code chunk in the source pane and the printed output will appear in the final compiled document. This is useful for producing figures and tables.</p>
+<p><img src="images/rmarkdown/example_chunk_ouptut.png" /></p>
+<div id="options" class="section level3">
+<h3><span class="header-section-number">10.1.1</span> Options</h3>
+<p>There are a number of code chunk options that can be specified in the code chunk header to modify how the code chunk is rendered while kniting.</p>
+<p>A comprehensive list of chunk options can be found here: <a href="https://yihui.org/knitr/options/" class="uri">https://yihui.org/knitr/options/</a></p>
+<div id="name" class="section level4">
+<h4><span class="header-section-number">10.1.1.1</span> name</h4>
 </div>
-<div id="preface" class="section level1">
-<h1><span class="header-section-number">1</span> Preface</h1>
-<p>This document was developed for a workshop that I led at the 2020 Northeast Aquatic Biologists (NABs) conference. If you identify any issues or have any questions, please direct these questions to the GitHub issues page associated with the GitHub repository for this document (<a href="https://github.com/zsmith27/rmarkdown_crash-course/issues" class="uri">https://github.com/zsmith27/rmarkdown_crash-course/issues</a>).</p>
+<div id="echo" class="section level4">
+<h4><span class="header-section-number">10.1.1.2</span> echo</h4>
+<p>A logical value (true or false) indicating if the code chunk should be visible in the rendered document. By defualt the code chunk will be visible upon knitting (<code>echo=true</code>). To hide a specific code chunk set echo to “false” (<code>echo=false</code>).</p>
+</div>
+<div id="fig.width-fig.height-and-fig.cap" class="section level4">
+<h4><span class="header-section-number">10.1.1.3</span> fig.width, fig.height, and fig.cap</h4>
+</div>
+<div id="message-and-warning" class="section level4">
+<h4><span class="header-section-number">10.1.1.4</span> message and warning</h4>
+</div>
+<div id="include" class="section level4">
+<h4><span class="header-section-number">10.1.1.5</span> include</h4>
 
+</div>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="preparation-for-workshop.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lesson-4-yaml-headers.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lesson-5-child-documents.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

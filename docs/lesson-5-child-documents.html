@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>R Markdown Crash Course</title>
-  <meta name="description" content="R Markdown Crash Course" />
+  <title>11 Lesson 5: Child Documents | R Markdown Crash Course</title>
+  <meta name="description" content="11 Lesson 5: Child Documents | R Markdown Crash Course" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="R Markdown Crash Course" />
+  <meta property="og:title" content="11 Lesson 5: Child Documents | R Markdown Crash Course" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R Markdown Crash Course" />
+  <meta name="twitter:title" content="11 Lesson 5: Child Documents | R Markdown Crash Course" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="preparation-for-workshop.html"/>
+<link rel="prev" href="lesson-4-code-chunks-and-inline-code.html"/>
+<link rel="next" href="lesson-6-parameterized-reports.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -213,23 +213,62 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">R Markdown Crash Course</h1>
-<p class="author"><em>Zachary M. Smith</em></p>
-<p class="date"><em>2020-02-26</em></p>
-</div>
-<div id="preface" class="section level1">
-<h1><span class="header-section-number">1</span> Preface</h1>
-<p>This document was developed for a workshop that I led at the 2020 Northeast Aquatic Biologists (NABs) conference. If you identify any issues or have any questions, please direct these questions to the GitHub issues page associated with the GitHub repository for this document (<a href="https://github.com/zsmith27/rmarkdown_crash-course/issues" class="uri">https://github.com/zsmith27/rmarkdown_crash-course/issues</a>).</p>
+<div id="lesson-5-child-documents" class="section level1">
+<h1><span class="header-section-number">11</span> Lesson 5: Child Documents</h1>
+<p>In general, I find that a single R Markdown file quickly becomes unwieldy. I recommend breaking the document up into multiple “child” documents and sourcing these child documents in a parent document. My child documents generally represent major subsections of the document.</p>
+<p>I store the parent R Markdown file in the “markdown” folder (rproject/markdown) and the child R Markdown files in a sub-directory of my “markdown” folder called “sections” (rproject/markdown/sections). In the parent file, the child files are sourced within the code chunk header using “child = ‘sections/example.Rmd’. After sourcing all the child chunks, the parent file can be knit (compiled) like a normal R markdown document. The child documents cannot be run in the parent file.</p>
+<p><img src="images/rmarkdown/child_document.png" /></p>
+<div id="extract-and-run-r-code-from-r-markdown-files" class="section level3">
+<h3><span class="header-section-number">11.0.1</span> Extract and Run R-Code from R Markdown Files</h3>
+<p>The parent file is great for organizing sections of your document, but the child documents cannot be executed within R Studio like a normal code chunk. Without the ability to easily execute the R code within the child documents it can become very difficult to develop new child documents because new child documents often depend on upstream code execution.</p>
+<p>Imagine you have a parent document that sources child sections which import your data and clean your data. You now want to visualize your data; accordingly, you begin to develop a visualization child document, which depends on information from the upstream child sections. It would be inefficient and inappropriate to perform all the steps in the upstream child sections within the visualization section. Therefore, you need an effective way to execute the upstream child sections while you continue to develop the visualization section. The inefficient way of doing this is to open each child Rmd file in R Studio and execute them manually in the correct sequence. This becomes tedious after you have three or more documents (imagine doing this for 10+ child sections). The most efficient way that I have found to run upstream child sections is to extract the R-code chunks from each Rmd file, save them in a “raw_scripts” folder, and then source/execute the scripts within a regular R script file (.R).</p>
+<div id="r-code" class="section level4">
+<h4><span class="header-section-number">11.0.1.1</span> R Code</h4>
+<p>In this section we establish the file path to the folder that contains all the child documents. The names of the child documents are extracted and stored as a vector. The grepl() function is used to retain only the Rmd files stored in the vector.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">sections.path &lt;-<span class="st"> </span><span class="kw">file.path</span>(rprojroot<span class="op">::</span><span class="kw">find_root</span>(<span class="st">&quot;r_in_practice.Rproj&quot;</span>),</a>
+<a class="sourceLine" id="cb3-2" title="2">                           <span class="st">&quot;markdown&quot;</span>,</a>
+<a class="sourceLine" id="cb3-3" title="3">                           <span class="st">&quot;sections&quot;</span>)</a>
+<a class="sourceLine" id="cb3-4" title="4">r.files.vec &lt;-<span class="st"> </span><span class="kw">list.files</span>(sections.path)</a>
+<a class="sourceLine" id="cb3-5" title="5">r.files.vec &lt;-<span class="st"> </span>r.files.vec[<span class="kw">grepl</span>(<span class="st">&quot;.Rmd&quot;</span>, r.files.vec)]</a></code></pre></div>
+<p>Next, a file path is specified for the R-scripts that will be extracted from the R Markdown documents; I place these files within a “raw_script/extracted” folder. The map() function from the purrr package is used to loop through each file in the vector (r.files.vec). Within the map() loop, the purl() function from knitr is used to extract the R-code from the R Markdown documents and save the code to the specified folder.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">extracted.path &lt;-<span class="st"> </span><span class="kw">file.path</span>(rprojroot<span class="op">::</span><span class="kw">find_root</span>(<span class="st">&quot;r_in_practice.Rproj&quot;</span>),</a>
+<a class="sourceLine" id="cb4-2" title="2">                           <span class="st">&quot;markdown&quot;</span>,</a>
+<a class="sourceLine" id="cb4-3" title="3">                           <span class="st">&quot;raw_scripts&quot;</span>,</a>
+<a class="sourceLine" id="cb4-4" title="4">                           <span class="st">&quot;extracted&quot;</span>)</a>
+<a class="sourceLine" id="cb4-5" title="5"></a>
+<a class="sourceLine" id="cb4-6" title="6">purrr<span class="op">::</span><span class="kw">map</span>(r.files.vec, <span class="cf">function</span>(file.i) {</a>
+<a class="sourceLine" id="cb4-7" title="7">  <span class="co"># print(file.i)</span></a>
+<a class="sourceLine" id="cb4-8" title="8">  file.name &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;.Rmd&quot;</span>, <span class="st">&quot;&quot;</span>, file.i)</a>
+<a class="sourceLine" id="cb4-9" title="9">  extracted.file &lt;-<span class="st"> </span><span class="kw">paste0</span>(file.name, <span class="st">&quot;.R&quot;</span>)</a>
+<a class="sourceLine" id="cb4-10" title="10">  knitr<span class="op">::</span><span class="kw">purl</span>(</a>
+<a class="sourceLine" id="cb4-11" title="11">    <span class="kw">file.path</span>(sections.path, file.i),</a>
+<a class="sourceLine" id="cb4-12" title="12">    <span class="kw">file.path</span>(extracted.path, extracted.file)</a>
+<a class="sourceLine" id="cb4-13" title="13">    )</a>
+<a class="sourceLine" id="cb4-14" title="14">})</a></code></pre></div>
+<p>Finally, create a vector of file names (source.vec) stored in the “raw_script/extracted” folder. You will want to type these out manually (do not use list.files() functions) because in this format you can easily comment out certain scripts and only run the scripts of interest. The map() is then used to loop through each specified file in source.vec. Keep in mind that the order of the file names specified in source.vec will determine the order that these files are executed in the map() function; therefore, order the files in source.vec from furthest upstream to furthest downstream. Each iteration of the loop, executes (sources) the specified R-script.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">source.vec &lt;-<span class="st"> </span><span class="kw">c</span>(</a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="st">&quot;introduction.R&quot;</span>,</a>
+<a class="sourceLine" id="cb5-3" title="3">  <span class="st">&quot;quick_reference.R&quot;</span>,</a>
+<a class="sourceLine" id="cb5-4" title="4">  <span class="st">&quot;installation_updates.R&quot;</span>,</a>
+<a class="sourceLine" id="cb5-5" title="5">  <span class="st">&quot;r_project.R&quot;</span>,</a>
+<a class="sourceLine" id="cb5-6" title="6">  <span class="st">&quot;version_control.R&quot;</span></a>
+<a class="sourceLine" id="cb5-7" title="7">)</a>
+<a class="sourceLine" id="cb5-8" title="8"></a>
+<a class="sourceLine" id="cb5-9" title="9">purrr<span class="op">::</span><span class="kw">map</span>(source.vec, <span class="cf">function</span>(source.i) {</a>
+<a class="sourceLine" id="cb5-10" title="10">  <span class="kw">source</span>(<span class="kw">file.path</span>(extracted.path, source.i))</a>
+<a class="sourceLine" id="cb5-11" title="11">})</a></code></pre></div>
+<p>Once all the R-scripts extracted from the upstream child R Markdown files have been executed, you can begin or continue work on a new child R Markdown document. I keep all the above code in a single R-script and execute the entire script each time I use this file to make sure all of the files are up-to-date.</p>
 
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="preparation-for-workshop.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lesson-4-code-chunks-and-inline-code.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lesson-6-parameterized-reports.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

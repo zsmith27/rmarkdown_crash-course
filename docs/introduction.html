@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>R Markdown Crash Course</title>
-  <meta name="description" content="R Markdown Crash Course" />
+  <title>4 Introduction | R Markdown Crash Course</title>
+  <meta name="description" content="4 Introduction | R Markdown Crash Course" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="R Markdown Crash Course" />
+  <meta property="og:title" content="4 Introduction | R Markdown Crash Course" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R Markdown Crash Course" />
+  <meta name="twitter:title" content="4 Introduction | R Markdown Crash Course" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="preparation-for-workshop.html"/>
+<link rel="prev" href="overview.html"/>
+<link rel="next" href="r-and-r-studio.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -213,23 +213,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">R Markdown Crash Course</h1>
-<p class="author"><em>Zachary M. Smith</em></p>
-<p class="date"><em>2020-02-26</em></p>
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">4</span> Introduction</h1>
+<center>
+<img src="images/hex_symbols/rmarkdown.png" width="200" />
+</center>
+<ul>
+<li><strong>R Markdown: The Definitive Guide:</strong> <a href="https://bookdown.org/yihui/rmarkdown/" class="uri">https://bookdown.org/yihui/rmarkdown/</a></li>
+<li><strong>RStudio Lessons:</strong> <a href="https://rmarkdown.rstudio.com/lesson-1.html" class="uri">https://rmarkdown.rstudio.com/lesson-1.html</a></li>
+</ul>
+<p>Markdown is a markup language for developing and formating documents. R Markdown is an R-package that allows the user to integrate text, R-code, and R-code output into a well formatted document (e.g., HTML, MS Word, PDF).</p>
+<center>
+<img src="images/rmarkdown/output_types.png" />
+</center>
+<p>My recommendation is to create an R Markdown file for every R-project. The intention is to document as much of the project as possible. R Markdown provides a more readable document, with better descriptions of how and why an activity was performed, than a standard R script with a few commented lines.</p>
+<div id="benefits" class="section level2">
+<h2><span class="header-section-number">4.1</span> Benefits</h2>
+<ul>
+<li><strong>Reproducible:</strong> Document steps of an investigation or scientific study <a href="https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970">reproducibility crisis</a>.
+<center>
+<img src="images/rmarkdown/reproducible.png" width="500" />
+</center></li>
+<li><strong>Collaborative:</strong> Easy to work with others on investigations and scientific studies.
+<center>
+<img src="images/rmarkdown/markdown_github.png" width="500" />
+</center></li>
+<li><strong>Efficient:</strong> Generate and update reports automatically (e.g., HTML, MS Word, and PDF).
+<center>
+<img src="images/rmarkdown/parameterized.png" width="500" />
+</center></li>
+<li><strong>Engaging:</strong> Embed interactive figures, maps, and tables in reports (HTML only).
+<ul>
+<li><strong>Source:</strong> <a href="https://plotly-book.cpsievert.me/images/gapminder-highlight-animation.gif" class="uri">https://plotly-book.cpsievert.me/images/gapminder-highlight-animation.gif</a></li>
+</ul></li>
+</ul>
+<center>
+<img src="https://plotly-book.cpsievert.me/images/gapminder-highlight-animation.gif" width="500" />
+</center>
 </div>
-<div id="preface" class="section level1">
-<h1><span class="header-section-number">1</span> Preface</h1>
-<p>This document was developed for a workshop that I led at the 2020 Northeast Aquatic Biologists (NABs) conference. If you identify any issues or have any questions, please direct these questions to the GitHub issues page associated with the GitHub repository for this document (<a href="https://github.com/zsmith27/rmarkdown_crash-course/issues" class="uri">https://github.com/zsmith27/rmarkdown_crash-course/issues</a>).</p>
+<div id="basic-overview" class="section level2">
+<h2><span class="header-section-number">4.2</span> Basic Overview</h2>
+<p>Use markdown syntax, some of which is shown in the table below, to format the document.</p>
+<ul>
+<li><strong>Source:</strong> <a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf" class="uri">https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf</a></li>
+</ul>
+<center>
+<img src="images/rmarkdown/reference.png" width="800" />
+</center>
+<p>Once the document is complete (formated with markdown syntax with integrated R code) the document can be knit (rendered) using the package <strong>knitr</strong>.</p>
+<p>Here is a simple example showing the raw R Markdown (Rmd) file before knitting (rendering) and after knitting. The colors on the far left are ther to help identify elements pre- and post-knitting.</p>
+<center>
+<img src="images/rmarkdown/raw_to_rendered.png" width="700" />
+</center>
+<p>R is not the only language supported by R Markdown. The following languages and more can be integrated into an R Markdown file.</p>
+<center>
+<img src="images/rmarkdown/languages.png" width="500" />
+</center>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="preparation-for-workshop.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="overview.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-and-r-studio.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

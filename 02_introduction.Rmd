@@ -26,24 +26,24 @@ My recommendation is to create an R Markdown file for every R-project. The inten
 
 * __Reproducible:__ Document steps of an investigation or scientific study [reproducibility crisis](https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970).
 <center>
-![](images/rmarkdown/reproducible.png){width=400}
+![](images/rmarkdown/reproducible.png){width=500}
 </center>
 
 * __Collaborative:__ Easy to work with others on investigations and scientific studies.
 <center>
-![](images/rmarkdown/markdown_github.png){width=400}
+![](images/rmarkdown/markdown_github.png){width=500}
 </center>
 
 * __Efficient:__ Generate and update reports automatically (e.g., HTML, MS Word, and PDF).
 <center>
-![](images/rmarkdown/parameterized.png){width=400}
+![](images/rmarkdown/parameterized.png){width=500}
 </center>
 
 * __Engaging:__ Embed interactive figures, maps, and tables in reports (HTML only).
     + __Source:__ https://plotly-book.cpsievert.me/images/gapminder-highlight-animation.gif
 
 <center>
-![](https://plotly-book.cpsievert.me/images/gapminder-highlight-animation.gif){width=400}
+![](https://plotly-book.cpsievert.me/images/gapminder-highlight-animation.gif){width=500}
 </center>
 
 ## Basic Overview
@@ -53,7 +53,7 @@ Use markdown syntax, some of which is shown in the table below, to format the do
 * __Source:__ https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
 
 <center>
-![](images/rmarkdown/reference.png){width=400}
+![](images/rmarkdown/reference.png){width=800}
 </center>
 
 Once the document is complete (formated with markdown syntax with integrated R code) the document can be knit (rendered) using the package __knitr__.
@@ -61,12 +61,12 @@ Once the document is complete (formated with markdown syntax with integrated R c
 Here is a simple example showing the raw R Markdown (Rmd) file before knitting (rendering) and after knitting. The colors on the far left are ther to help identify elements pre- and post-knitting.
 
 <center>
-![](images/rmarkdown/raw_to_rendered.png){width=400}
+![](images/rmarkdown/raw_to_rendered.png){width=700}
 </center>
 
 
 R is not the only language supported by R Markdown. The following languages and more can be integrated into an R Markdown file.
 
 <center>
-![](images/rmarkdown/languages.png){width=400}
+![](images/rmarkdown/languages.png){width=500}
 </center>

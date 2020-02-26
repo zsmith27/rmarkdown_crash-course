@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>R Markdown Crash Course</title>
-  <meta name="description" content="R Markdown Crash Course" />
+  <title>6 Lesson 1: R Project Development | R Markdown Crash Course</title>
+  <meta name="description" content="6 Lesson 1: R Project Development | R Markdown Crash Course" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="R Markdown Crash Course" />
+  <meta property="og:title" content="6 Lesson 1: R Project Development | R Markdown Crash Course" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R Markdown Crash Course" />
+  <meta name="twitter:title" content="6 Lesson 1: R Project Development | R Markdown Crash Course" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="preparation-for-workshop.html"/>
+<link rel="prev" href="r-and-r-studio.html"/>
+<link rel="next" href="lesson-2-rmd-creation.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -213,23 +213,86 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">R Markdown Crash Course</h1>
-<p class="author"><em>Zachary M. Smith</em></p>
-<p class="date"><em>2020-02-26</em></p>
+<div id="lesson-1-r-project-development" class="section level1">
+<h1><span class="header-section-number">6</span> Lesson 1: R Project Development</h1>
+<p><strong>Overview</strong></p>
+<ul>
+<li>Easier to access files (relative path)
+<ul>
+<li>Relative paths help prevent broken paths
+<ul>
+<li>In general, DO NOT use setwd()</li>
+<li>Will work if the project folder is moved to a new location on you local machine or moved to a new machine.</li>
+</ul></li>
+</ul></li>
+<li>Designed to easily integrate with version control (GIT)</li>
+<li>In general, all data, scripts, and output should be stored within the project directory.</li>
+</ul>
+<div id="create-a-new-r-project" class="section level2">
+<h2><span class="header-section-number">6.1</span> Create a New R Project</h2>
+<ol style="list-style-type: decimal">
+<li>Create a new R project by clicking on the dropdown menu at the top right of RStudio and selecting “New Project”</li>
+</ol>
+<p><img src="images/r_project/create_project.png" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Select “New Directory” within the “Create Project” window</li>
+</ol>
+<p><img src="images/r_project/new_directory.png" width="500" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Select “New Project” within the “Project Type” window</li>
+</ol>
+<p><img src="images/r_project/project_type.png" width="600" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Enter a project name(below I have given the name “new_project”), the project directory (where the project should live), and select “Create Project”
+<ul>
+<li><strong>Tip: Create a “project” folder that will act as your parent directory for all R projects. This will make it much easier to navigate to and between projects.</strong></li>
+</ul></li>
+</ol>
+<p><img src="images/r_project/create_new_project.png" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li>A new session specific to your R project will start within RStudio
+<ul>
+<li>There are a number of ways to tell which project is open…</li>
+</ul></li>
+</ol>
+<p><img src="images/r_project/fresh_project.png" /></p>
 </div>
-<div id="preface" class="section level1">
-<h1><span class="header-section-number">1</span> Preface</h1>
-<p>This document was developed for a workshop that I led at the 2020 Northeast Aquatic Biologists (NABs) conference. If you identify any issues or have any questions, please direct these questions to the GitHub issues page associated with the GitHub repository for this document (<a href="https://github.com/zsmith27/rmarkdown_crash-course/issues" class="uri">https://github.com/zsmith27/rmarkdown_crash-course/issues</a>).</p>
+<div id="navigate-between-packages" class="section level2">
+<h2><span class="header-section-number">6.2</span> Navigate Between Packages</h2>
+<p>Quickly navigate between recently opened R projects by clicking on the dropdown menu at the top right of RStudio and selecting the project of interest.</p>
+<p><img src="images/r_project/nav_project.png" width="400" /></p>
+</div>
+<div id="recommended-workflow" class="section level2">
+<h2><span class="header-section-number">6.3</span> Recommended Workflow</h2>
+<ol style="list-style-type: decimal">
+<li>Set up a GitHub repository.</li>
+<li>Create an R-project connected to the GitHub repository.</li>
+<li>Develop R-scripts.</li>
+<li>Push and pull project changes to and from GitHub.</li>
+</ol>
+<p><img src="images/r_project/workflow.png" /></p>
+</div>
+<div id="your-turn" class="section level2">
+<h2><span class="header-section-number">6.4</span> Your Turn</h2>
+<ol style="list-style-type: decimal">
+<li>Open R Studio.</li>
+<li>Create a new Project.</li>
+<li>Add an “data” folder and add the example data set to this folder.</li>
+<li>Add an “rmarkdown” folder. This folder will store the Rmd files created in subsequent lessons.</li>
+</ol>
+<ul>
+<li>Add a subfolder within “rmarkdown” titled “sections.”</li>
+</ul>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="preparation-for-workshop.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="r-and-r-studio.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lesson-2-rmd-creation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
