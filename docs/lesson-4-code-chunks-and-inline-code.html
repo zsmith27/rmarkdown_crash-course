@@ -24,7 +24,7 @@
 <meta name="author" content="Zachary M. Smith" />
 
 
-<meta name="date" content="2020-02-26" />
+<meta name="date" content="2020-02-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -191,9 +191,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#code-chunks"><i class="fa fa-check"></i><b>10.1</b> Code Chunks</a><ul>
 <li class="chapter" data-level="10.1.1" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#options"><i class="fa fa-check"></i><b>10.1.1</b> Options</a></li>
 </ul></li>
+<li class="chapter" data-level="10.2" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#inline-code"><i class="fa fa-check"></i><b>10.2</b> Inline Code</a></li>
+<li class="chapter" data-level="10.3" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#your-turn-4"><i class="fa fa-check"></i><b>10.3</b> Your Turn</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="lesson-5-child-documents.html"><a href="lesson-5-child-documents.html"><i class="fa fa-check"></i><b>11</b> Lesson 5: Child Documents</a><ul>
-<li class="chapter" data-level="11.0.1" data-path="lesson-5-child-documents.html"><a href="lesson-5-child-documents.html#extract-and-run-r-code-from-r-markdown-files"><i class="fa fa-check"></i><b>11.0.1</b> Extract and Run R-Code from R Markdown Files</a></li>
+<li class="chapter" data-level="11.1" data-path="lesson-5-child-documents.html"><a href="lesson-5-child-documents.html#extract-and-run-r-code-from-r-markdown-files"><i class="fa fa-check"></i><b>11.1</b> Extract and Run R-Code from R Markdown Files</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="lesson-5-child-documents.html"><a href="lesson-5-child-documents.html#r-code"><i class="fa fa-check"></i><b>11.1.1</b> R Code</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="lesson-5-child-documents.html"><a href="lesson-5-child-documents.html#your-turn-5"><i class="fa fa-check"></i><b>11.2</b> Your Turn</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="lesson-6-parameterized-reports.html"><a href="lesson-6-parameterized-reports.html"><i class="fa fa-check"></i><b>12</b> Lesson 6: Parameterized Reports</a></li>
 </ul>
@@ -215,34 +220,189 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="lesson-4-code-chunks-and-inline-code" class="section level1">
 <h1><span class="header-section-number">10</span> Lesson 4: Code Chunks and Inline Code</h1>
+<p>Up to this point in the workshop we have mostly just written a standard markdown document. However, we want to integrate R code into our document to create reproducible objects, such as figures, tables, and text. This integration will make will make it easier to reproduce the document.</p>
 <div id="code-chunks" class="section level2">
 <h2><span class="header-section-number">10.1</span> Code Chunks</h2>
-<p>To insert a code chunk, press <strong>Ctrl + Alt + i</strong> in the source pane (top left pane in the default settings of Studio). A code chunk will appear:</p>
-<p><img src="images/rmarkdown/code_chunk.png" />
-Inside the code chunk you can write and run R-code. If you print the output of your R-code it will appear below the code chunk in the source pane and the printed output will appear in the final compiled document. This is useful for producing figures and tables.</p>
+<p>To insert a code chunk, press <strong>Ctrl + Alt + i</strong> in the source pane (top left pane in the default settings of Studio). A code chunk will appear: <img src="images/rmarkdown/code_chunk.png" /></p>
+<p>Inside the code chunk you can write and run R-code. If you print the output of your R-code it will appear below the code chunk in the source pane and the printed output will appear in the final compiled document. This is useful for producing figures and tables.</p>
 <p><img src="images/rmarkdown/example_chunk_ouptut.png" /></p>
 <div id="options" class="section level3">
 <h3><span class="header-section-number">10.1.1</span> Options</h3>
-<p>There are a number of code chunk options that can be specified in the code chunk header to modify how the code chunk is rendered while kniting.</p>
+<p>There are a number of code chunk options that can be specified in the code chunk header to modify how the code chunk is rendered while kniting. These options will not be visible in the rendered document– even if you choose not to hide the code chunks in your rendered document.</p>
 <p>A comprehensive list of chunk options can be found here: <a href="https://yihui.org/knitr/options/" class="uri">https://yihui.org/knitr/options/</a></p>
 <div id="name" class="section level4">
 <h4><span class="header-section-number">10.1.1.1</span> name</h4>
+<p>Best practice is to include a short and unique name within each code chunk header. This will be especially beneficial if you need to troubleshoot an error in your document as you will be able to track the source of the error down by code chunk name. The “name” is not specified as an argument within the header; it is simply separated from the “r” by a space. This is exemplified in the image below on line 9 where “addition” is supplied as the name of the code chunk (<code>{r addition}</code>).</p>
+<p><img src="images/rmarkdown/code-chunk_name.png" /></p>
 </div>
 <div id="echo" class="section level4">
 <h4><span class="header-section-number">10.1.1.2</span> echo</h4>
 <p>A logical value (true or false) indicating if the code chunk should be visible in the rendered document. By defualt the code chunk will be visible upon knitting (<code>echo=true</code>). To hide a specific code chunk set echo to “false” (<code>echo=false</code>).</p>
+<p>Include the code chunk in the rendered document with <code>echo=true</code>.
+<img src="images/rmarkdown/code-chunk_echo-true.png" /></p>
+<p>Exclude the code chunk in the rendered document with <code>echo=false</code>.
+<img src="images/rmarkdown/code-chunk_echo-false.png" /></p>
 </div>
 <div id="fig.width-fig.height-and-fig.cap" class="section level4">
 <h4><span class="header-section-number">10.1.1.3</span> fig.width, fig.height, and fig.cap</h4>
+<p>The <code>fig.width</code> and <code>fig.height</code> options allow you to control the size of the figure generated from a given code chunk. <code>fig.cap</code> provides the ability to add a caption below the figure gnerated from a given code chunk.</p>
+<p>Here is an example of the plot output form a code chunk.
+<img src="images/rmarkdown/fig-options_default.png" /></p>
+<p>Here I have specified <code>fig.width</code>, <code>fig.height</code>, and <code>fig.cap</code>. Notice that plot dimensions have changed from the previous image and a caption has been added to the bottom of the figure.
+<img src="images/rmarkdown/fig-options_fig-cap-default.png" /></p>
+<p>In many cases, you will want the captions to be numbered and you will want this to occur automatically. To this you will first need to install the package <strong>bookdown</strong> (<code>install.packages("bookdown")</code>). Specify in the YAML header that the output should be “html_document2” from the <strong>bookdown</strong> package (<code>output: bookdown::html_document2</code>). When you render the document the figures will now be automatically numbered by the order they appear in the document. To cross reference a figure by name in the text use <code>\@ref(fig:figure_name)</code>. Using the example from the figure below, you might write “In <code>\@ref(fig:IrisScatter)</code> we can see that the species setosoa tend to have shorter sepal lengths than the other two species.” For more information visit <a href="https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html</a>.
+<img src="images/rmarkdown/fig-options_fig-cap-bookdown-html2.png" /></p>
 </div>
 <div id="message-and-warning" class="section level4">
 <h4><span class="header-section-number">10.1.1.4</span> message and warning</h4>
+<p>Using <code>message=FALSE</code> and/or <code>warning=FALSE</code> will suppress messages and warnings preventing them from printing in the rendered document. <strong>Warning:</strong> Suppress these messages/warnings at your own risk. Without these messages/warnings you may make it very difficult to track down any issues in your code.</p>
+<p>An example of messages that are produced with the default <code>message=TRUE</code>.
+<img src="images/rmarkdown/code-chunk_message-true.png" /></p>
+<p>The messages above can be suppressed by setting <code>message=FALSE</code> in the code chunk header.
+<img src="images/rmarkdown/code-chunk_message-false.png" /></p>
 </div>
 <div id="include" class="section level4">
 <h4><span class="header-section-number">10.1.1.5</span> include</h4>
+<p>Code chunk headers with <code>include=FALSE</code> will be ignored when the document is rendered. This can be useful during document development. For example, you may have a code chunk producing an error that prevents you from rendering the rest of your document or you may be questioning the need to keep a given code chunk. <code>include=FALSE</code> will exclude the code from the rendered document without deleting the code entirely from the .Rmd file.</p>
+<p>The default is <code>include=TRUE</code>. In the example below, <code>include</code> is not altered from the default and therefore all of the code chunks are present in the rendered document.
+<img src="images/rmarkdown/code-chunk_include-true.png" /></p>
+<p>In the example below I added <code>include=FALSE</code> to the header of the second code chunk named “iris-sepal-scatter.” The second code chunk is excluded from the rendered document.
+<img src="images/rmarkdown/code-chunk_include-false.png" /></p>
+</div>
+<div id="setting-global-options" class="section level4">
+<h4><span class="header-section-number">10.1.1.6</span> Setting Global Options</h4>
+<p>It can be helpful to establish global options to produce a standard format throughout the document. You can set this with the <strong>knitr</strong> function <code>opts_chunk$set()</code>. For instance, you may want to set a standard dimensions for figures produced by code chunks throughout your document. In the code chunk below, you can see that I set <code>fig.width</code> to 8 and <code>fig.height</code> to 4.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">fig.width =</span> <span class="dv">8</span>, <span class="dt">fig.height =</span> <span class="dv">4</span>)</a></code></pre></div>
+<p>The options specified in <code>opts_chunk$set()</code> become the default when rendering the document. However, you still have the ability to overwrite these options for specific code chunks. Building off of the previous example, you may find that one out of ten of your plots is not aesthetically pleasing with <code>fig.width = 8</code> and <code>fig.height = 4</code>. You could specify in the code chunk producing that plot that you want to set <code>fig.width = 6</code> and <code>fig.height = 6</code>, for example.</p>
+</div>
+</div>
+</div>
+<div id="inline-code" class="section level2">
+<h2><span class="header-section-number">10.2</span> Inline Code</h2>
+<p>Inline code enables you to insert R code into your document to dynamically updated portions of your text.</p>
+<p>To insert inline code you need to encompass your R code within:
+<img src="images/rmarkdown/inline_syntax.png" />.</p>
+<p>For example, you could write:</p>
+<p><img src="images/rmarkdown/inline_example_iris-mean-sepal-length.png" />
+<strong>Which would render to:</strong> The mean sepal length found in the <em>iris</em> dataset is 5.8433333.</p>
+<p>I frequently use inline code to make my YAML header date update to the date the document was last rendered.</p>
+<p><img src="images/rmarkdown/inline_yaml-date.png" /></p>
+<p>You can reformat the date using the <code>format()</code> function, as depicted in the image below.
+<img src="images/rmarkdown/inline_yaml-date-format.png" /></p>
+</div>
+<div id="your-turn-4" class="section level2">
+<h2><span class="header-section-number">10.3</span> Your Turn</h2>
+<p><em>The point of this exercise is to get you familiar with code chunks and inline code, NOT to test your R knowledge; therefore, I have included the necessary code below each task.</em></p>
+<ol style="list-style-type: decimal">
+<li>Add a code chunk using <strong>Ctrl + Alt + i</strong> to import the example data set.
+<ul>
+<li><code>read.csv(file = file.path("data", "zms_thesis_metrics.csv"), stringsAsFactors = FALSE)</code></li>
+<li>Add a name to this code chunk header and all subsequent code chunk headers.</li>
+<li>Add plain text description above the code chunk.</li>
+<li>Add the following unordered list describing the contents of the imported data.
+<ul>
+<li><code>unique_id</code> (character) unique sample ID</li>
+<li><code>lake</code> (character) lake code: caz = Cazenovia lake, onon = Onondaga, and ot = Otisco</li>
+<li><code>lat</code> (numeric) latitude of sampling location</li>
+<li><code>long</code> (numeric) longitude of sampling location</li>
+<li><code>substrate_size_d50</code> (numeric) median partical size from pebble count</li>
+<li><code>conductivity</code> (numeric) specific conductivity (µS/cm)</li>
+<li><code>richness</code> (numeric) taxonomic richness</li>
+<li><code>shannon</code> (numeric) Shannon-Wiener diversity index values</li>
+<li><code>pct_ephemeroptera</code> (numeric) relative abundance of Ephemeroptera taxa</li>
+<li><code>pct_amphipoda</code> (numeric) relative abundance of Amphipoda taxa</li>
+<li><code>pct_diptera</code> (numeric) relative abundance of Diptera taxa</li>
+<li><code>dom_1</code> (numeric) relative abundance of the most dominant taxon observed in each sample</li>
+</ul></li>
+</ul></li>
+<li>Add a code chunk to import the <strong>tidyverse</strong> packages.
+<ul>
+<li><code>library(tidyverse)</code></li>
+<li>Add plain text description above the code chunk.</li>
+<li>Add <code>message=FALSE</code> to the code chunk header to prevent the package start-up messages</li>
+</ul></li>
+<li>Add a code chunk below <code>libary(tidyverse)</code> to preprocess lake name (<code>lake</code>) associated with each sample.</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">thesis.df &lt;-<span class="st"> </span>thesis.df <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">lake =</span> <span class="kw">case_when</span>(</a>
+<a class="sourceLine" id="cb4-3" title="3">    lake <span class="op">%in%</span><span class="st"> &quot;caz&quot;</span> <span class="op">~</span><span class="st"> &quot;Cazenovia&quot;</span>,</a>
+<a class="sourceLine" id="cb4-4" title="4">    lake <span class="op">%in%</span><span class="st"> &quot;onon&quot;</span> <span class="op">~</span><span class="st"> &quot;Onondaga&quot;</span>,</a>
+<a class="sourceLine" id="cb4-5" title="5">    lake <span class="op">%in%</span><span class="st"> &quot;ot&quot;</span> <span class="op">~</span><span class="st"> &quot;Otisco&quot;</span>,</a>
+<a class="sourceLine" id="cb4-6" title="6">    <span class="ot">TRUE</span> <span class="op">~</span><span class="st"> &quot;ERROR&quot;</span></a>
+<a class="sourceLine" id="cb4-7" title="7">  ),</a>
+<a class="sourceLine" id="cb4-8" title="8">  <span class="dt">lake =</span> <span class="kw">factor</span>(lake, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;Onondaga&quot;</span>,</a>
+<a class="sourceLine" id="cb4-9" title="9">                                 <span class="st">&quot;Otisco&quot;</span>,</a>
+<a class="sourceLine" id="cb4-10" title="10">                                 <span class="st">&quot;Cazenovia&quot;</span>)))</a></code></pre></div>
+<ol start="4" style="list-style-type: decimal">
+<li>Add a code chunk just below the YAML header to specify global code chunk options
+<ul>
+<li>specify <code>fig.width</code> and <code>fig.height</code></li>
+<li>in the header specify <code>echo=FALSE</code> to hide this code chunk– your reader does not need to see this</li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>()</a></code></pre></div>
+<ol start="5" style="list-style-type: decimal">
+<li>Add a code chunk below the “Preproccessing” header and add the following <strong>DT</strong> code
+<ul>
+<li>add this link (<a href="https://rstudio.github.io/DT/" class="uri">https://rstudio.github.io/DT/</a>) to your description above the code chunk to describe where you can find more information on <strong>DT</strong></li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">library</span>(DT)</a>
+<a class="sourceLine" id="cb6-2" title="2"></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="kw">datatable</span>(thesis.df, <span class="dt">options =</span> <span class="kw">list</span>(<span class="dt">scrollX =</span> <span class="ot">TRUE</span>))</a></code></pre></div>
+<ol start="6" style="list-style-type: decimal">
+<li>Add a code chunk below the “Study Area” header and add the following <strong>leaflet</strong> code
+<ul>
+<li>add this link (<a href="https://rstudio.github.io/leaflet/" class="uri">https://rstudio.github.io/leaflet/</a>) to your description above the code chunk to describe where you can find more information on <strong>leaflet</strong></li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">library</span>(leaflet)</a>
+<a class="sourceLine" id="cb7-2" title="2"></a>
+<a class="sourceLine" id="cb7-3" title="3">pal &lt;-<span class="st"> </span><span class="kw">colorFactor</span>(<span class="kw">c</span>(<span class="st">&quot;#619Cff&quot;</span>, <span class="st">&quot;#F8766D&quot;</span>, <span class="st">&quot;#00BA38&quot;</span>),</a>
+<a class="sourceLine" id="cb7-4" title="4">                   <span class="dt">domain =</span> <span class="kw">c</span>(<span class="st">&quot;Cazenovia&quot;</span>, <span class="st">&quot;Onondaga&quot;</span>, <span class="st">&quot;Otisco&quot;</span>))</a>
+<a class="sourceLine" id="cb7-5" title="5"></a>
+<a class="sourceLine" id="cb7-6" title="6"><span class="kw">leaflet</span>(<span class="dt">data =</span> thesis.df,</a>
+<a class="sourceLine" id="cb7-7" title="7">        <span class="dt">options =</span> <span class="kw">leafletOptions</span>(<span class="dt">minZoom =</span> <span class="dv">7</span>,</a>
+<a class="sourceLine" id="cb7-8" title="8">                                 <span class="dt">maxZoom =</span> <span class="dv">13</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-9" title="9"><span class="st">  </span><span class="kw">addTiles</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-10" title="10"><span class="st">  </span><span class="kw">addCircleMarkers</span>(<span class="op">~</span>long, <span class="op">~</span>lat,</a>
+<a class="sourceLine" id="cb7-11" title="11">                   <span class="dt">fillOpacity =</span> <span class="fl">0.75</span>,</a>
+<a class="sourceLine" id="cb7-12" title="12">                   <span class="dt">fillColor =</span> <span class="op">~</span><span class="kw">pal</span>(lake),</a>
+<a class="sourceLine" id="cb7-13" title="13">                   <span class="dt">stroke =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb7-14" title="14">             <span class="dt">popup =</span> <span class="kw">paste</span>(<span class="st">&quot;Sample ID:&quot;</span>, thesis.df<span class="op">$</span>unique_id, <span class="st">&quot;&lt;br/&gt;&quot;</span>,</a>
+<a class="sourceLine" id="cb7-15" title="15">                           <span class="st">&quot;Lake:&quot;</span>, thesis.df<span class="op">$</span>lake, <span class="st">&quot;&lt;br/&gt;&quot;</span>,</a>
+<a class="sourceLine" id="cb7-16" title="16">                           <span class="st">&quot;Latitude:&quot;</span>, thesis.df<span class="op">$</span>lat, <span class="st">&quot;&lt;br/&gt;&quot;</span>,</a>
+<a class="sourceLine" id="cb7-17" title="17">                           <span class="st">&quot;Longitude:&quot;</span>, thesis.df<span class="op">$</span>long)</a>
+<a class="sourceLine" id="cb7-18" title="18">             )</a></code></pre></div>
+<ol start="7" style="list-style-type: decimal">
+<li>Add a code chunk to generate a scatter plot.
+<ul>
+<li>Add a caption</li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">ggplot</span>(thesis.df, <span class="kw">aes</span>(substrate_size_d50, pct_diptera, <span class="dt">color =</span> lake)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
+<ol start="8" style="list-style-type: decimal">
+<li>Add a code chunk generate a boxplot.
+<ul>
+<li>Modify the figure size</li>
+<li>Add a caption</li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">ggplot</span>(thesis.df, <span class="kw">aes</span>(lake, richness, <span class="dt">fill =</span> lake)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="st">  </span><span class="kw">geom_boxplot</span>()</a></code></pre></div>
+<ol start="9" style="list-style-type: decimal">
+<li>Add a brief interpretation of the figures into the “Conclusions” section.</li>
+<li><strong>Bonus:</strong> If you have enough time, edit the scatter plot code chunk to make the figure interactive with <strong>plotly</strong>
+<ul>
+<li>add this link (<a href="https://plot.ly/ggplot2/" class="uri">https://plot.ly/ggplot2/</a>) to your description above the code chunk</li>
+<li>play around with the interactive plot and the tools provided at the top right of the plot
+<ul>
+<li>For example, you can zoom in, click on points to get more information, take a snapshot of the current plot, etc.</li>
+</ul></li>
+</ul></li>
+</ol>
 
-</div>
-</div>
 </div>
 </div>
             </section>

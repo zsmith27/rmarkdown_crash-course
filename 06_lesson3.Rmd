@@ -64,14 +64,19 @@ Follow the steps in Unordered Lists but instead of using astricks (*) use sequen
 1. Delete everything below the YAML header.
 2. Add the following level-1 headers and knit the document.
   + Introduction
+  + Workflow
   + Import Data
   + Preprocessing
+  + Study Area
   + Plot
+  + Conclusions
 3. Add two level-2 headers below the Plot header and knit the document.
   + Scatter Plot
   + LOESS Plot
 3. Add plain text below the Introduction header and knit the document.
   + Be sure to include some __bold__ and _italicized_ text.
   + Explain the purpose of the document (e.g., "This document was created during the 2020 NABs R Markdown workshop and will serve as an example workflow for my future use of R Markdown.")
-4. Add unordered and ordered list below the Introduction header and knit the document.
+4. Add unordered or ordered list below the Workflow header and knit the document.
+  + Describe the workflow we have talked about thus far (e.g., create an R project, add folders, create an rmarkdown document, knit the document to render).
+  + Add sub-bullets with helpful details.
 

@@ -61,5 +61,3 @@ Quickly navigate between recently opened R projects by clicking on the dropdown 
 1. Open R Studio.
 2. Create a new Project.
 3. Add an "data" folder and add the example data set to this folder.
-4. Add an "rmarkdown" folder. This folder will store the Rmd files created in subsequent lessons.
-  * Add a subfolder within "rmarkdown" titled "sections."
