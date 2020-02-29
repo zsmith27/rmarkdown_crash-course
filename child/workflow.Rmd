@@ -1,0 +1,14 @@
+---
+title: "Untitled"
+author: "Zachary M. Smith"
+date: "2/28/2020"
+output: html_document
+---
+
+# Workflow
+
+1. Open R Studio
+2. Create an R Project
+3. Add a data folder to the R project directory
+4. Create an R Markdown document
+5. Use Knit to compile the document.

@@ -1,0 +1,28 @@
+---
+title: "Untitled"
+author: "Zachary M. Smith"
+date: "2/28/2020"
+output: html_document
+---
+
+# Plot
+
+## Scatter Plot
+
+For more details about the __plotly__ package visit https://plot.ly/ggplot2/.
+```{r scatter-sub-dip, message=FALSE}
+library(plotly)
+
+scatter.plot <- ggplot(thesis.df, aes(substrate_size_d50, pct_diptera)) +
+  geom_point(aes(color = lake)) +
+  geom_smooth(method = "lm")
+
+ggplotly(scatter.plot)
+```
+
+## Boxplot
+
+```{r boxplot-lake-rich}
+ggplot(thesis.df, aes(lake, richness, fill = lake)) +
+  geom_boxplot()
+```

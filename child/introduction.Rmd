@@ -1,0 +1,10 @@
+---
+title: "Untitled"
+author: "Zachary M. Smith"
+date: "2/28/2020"
+output: html_document
+---
+
+# Introduction
+
+This document was created during the _2020 NABs R Markdown workshop_ and will serve as an example workflow for my future use of __R Markdown__.

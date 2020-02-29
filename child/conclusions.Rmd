@@ -1,0 +1,11 @@
+---
+title: "Untitled"
+author: "Zachary M. Smith"
+date: "2/28/2020"
+output: html_document
+---
+
+# Conclusions
+
+1. The relative abundance of Diptera taxa (`pct_diptera`) decreases as the median substrate size (`substrate_size_d50`) increases.
+2. Taxonomic richness differed between all lakes. Onondaga lake had the lowest taxonomic richness, while taxonomic richness was greatest in Cazenovia Lake.

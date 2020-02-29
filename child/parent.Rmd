@@ -1,0 +1,34 @@
+---
+title: "R Markdown Crash Course Example: Child Documents"
+author: "Zachary M. Smith"
+date: "Sys.Date()"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: journal
+---
+
+```{r, child="introduction.Rmd"}
+
+```
+
+```{r, child="workflow.Rmd"}
+
+```
+
+```{r, child="import_data.Rmd"}
+
+```
+
+```{r, child="study_area.Rmd"}
+
+```
+
+```{r, child="plot.Rmd"}
+
+```
+
+```{r, child="conclusions.Rmd"}
+
+```

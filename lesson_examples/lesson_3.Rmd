@@ -1,0 +1,32 @@
+---
+title: "Untitled"
+author: "Zachary M. Smith"
+date: "2/26/2020"
+output: html_document
+---
+
+# Introduction
+
+This document was created during the _2020 NABs R Markdown workshop_ and will serve as an example workflow for my future use of __R Markdown__.
+
+# Workflow
+
+1. Open R Studio
+2. Create an R Project
+3. Add a data folder to the R project directory
+4. Create an R Markdown document
+5. Use Knit to compile the document.
+
+# Import Data
+
+# Preprocessing
+
+# Study Area
+
+# Plot
+
+## Scatter Plot
+
+## LOESS Plot
+
+# Conclusions

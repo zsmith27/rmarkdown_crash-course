@@ -1,0 +1,57 @@
+---
+title: "Untitled"
+author: "Zachary M. Smith"
+date: "2/28/2020"
+output: html_document
+---
+
+# Import Data
+
+Import Zachary M. Smith's thesis data provided by Zachary M. Smith at the R Markdown Crash Course Workshop on March 3rd, 2020.
+
+* `unique_id` (character) unique sample ID
+* `lake` (character) lake code: caz = Cazenovia lake, onon = Onondaga, and ot = Otisco
+* `lat` (numeric) latitude of sampling location
+* `long` (numeric) longitude of sampling location
+* `substrate_size_d50` (numeric) median partical size from pebble count
+* `conductivity` (numeric) specific conductivity (µS/cm)
+* `richness` (numeric) taxonomic richness
+* `shannon` (numeric) Shannon-Wiener diversity index values
+* `pct_ephemeroptera` (numeric) relative abundance of Ephemeroptera taxa
+* `pct_amphipoda` (numeric) relative abundance of Amphipoda taxa
+* `pct_diptera` (numeric) relative abundance of Diptera taxa
+* `dom_1` (numeric) relative abundance of the most dominant taxon observed in each sample
+```{r import-data}
+thesis.df <- read.csv(file.path(here::here(),
+                                "data",
+                                "zms_thesis_metrics.csv"),
+                      stringsAsFactors = FALSE)
+```
+
+
+# Preprocessing
+
+Load the __tidyverse__ packages into the global environment.
+```{r load-packages, message=FALSE}
+library(tidyverse)
+```
+
+```{r prep-lake}
+thesis.df <- thesis.df %>% 
+  mutate(lake = case_when(
+    lake %in% "caz" ~ "Cazenovia",
+    lake %in% "onon" ~ "Onondaga",
+    lake %in% "ot" ~ "Otisco",
+    TRUE ~ "ERROR"
+  ),
+  lake = factor(lake, levels = c("Onondaga",
+                                 "Otisco",
+                                 "Cazenovia")))
+```
+
+For more details about the __DT__ package visit https://rstudio.github.io/DT/.
+```{r dt}
+library(DT)
+
+datatable(thesis.df, options = list(scrollX = TRUE))
+```

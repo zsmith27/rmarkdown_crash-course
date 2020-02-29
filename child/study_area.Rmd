@@ -1,0 +1,31 @@
+---
+title: "Untitled"
+author: "Zachary M. Smith"
+date: "2/28/2020"
+output: html_document
+---
+
+# Study Area
+
+For more details about the __leaflet__ package visit https://rstudio.github.io/leaflet/.
+```{r leaflet}
+library(leaflet)
+
+pal <- colorFactor(c("#619Cff", "#F8766D", "#00BA38"),
+                   domain = c("Cazenovia", "Onondaga", "Otisco"))
+
+leaflet(data = thesis.df,
+        options = leafletOptions(minZoom = 7,
+                                 maxZoom = 13)) %>% 
+  addTiles() %>% 
+  addCircleMarkers(~long, ~lat,
+                   fillOpacity = 0.75,
+                   fillColor = ~pal(lake),
+                   stroke = FALSE,
+             popup = paste("Sample ID:", thesis.df$unique_id, "<br/>",
+                           "Lake:", thesis.df$lake, "<br/>",
+                           "Latitude:", thesis.df$lat, "<br/>",
+                           "Longitude:", thesis.df$long)
+             )
+
+```
