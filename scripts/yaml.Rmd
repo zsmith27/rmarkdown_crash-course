@@ -1,12 +1,23 @@
 ---
 title: "Example"
 author: "Zachary M. Smith"
-date: "November 16, 2018"
-output: 
-  html_document:
-    code_folding: hide
+date: "`r Sys.Date()`"
+output: html_document
 ---
 
-```{r}
-2 + 2
+```{r load-package-data}
+library(ggplot2)
+
+data(iris)
 ```
+
+```{r iris-sepal-scatter, include=FALSE, fig.width=10, fig.height=3, fig.cap="Iris sepal length by width."}
+ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
+  geom_point()
+```
+
+```{r iris-petal-scatter, fig.width=10, fig.height=3, fig.cap="Iris petal length by width."}
+ggplot(iris, aes(Petal.Length, Petal.Width, color = Species)) +
+  geom_point()
+```
+
