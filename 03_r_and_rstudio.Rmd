@@ -9,16 +9,16 @@ output: html_document
 
 ## What is R?
 
-R is an open source programming language developed for statistical computing and graphic production. "R can be considered as a differenct implementation of S", a language that was developed at Bell Laboratories (https://www.r-project.org/about.html).
+R is an open source programming language developed for statistical computing and graphic production. "R can be considered as a different implementation of S", a language that was developed at Bell Laboratories (https://www.r-project.org/about.html).
 
 ### Benefits of Using R
 
 1. __Reproducibility:__ Standardized processes (e.g., functions, loops, documentation)
-    + When using MS Excel processes are often spread across multiple sheets or calculations are performed haphazardly within a single sheet. In general, this makes it very hard to interpret processes performmed and to reproduce the process.
+    + When using MS Excel processes are often spread across multiple sheets or calculations are performed haphazardly within a single sheet. In general, this makes it very hard to interpret processes preformed and to reproduce the process.
 2. __Power:__ Ability to perform simple and complex data manipulations, iterative processes, and calculations
     + Access to more than 10,000 packages on CRAN
     + New packages are constantly being developed
-    + New features are contsantly being added to existing packages
+    + New features are constantly being added to existing packages
 
 ### R Packages
 
@@ -28,7 +28,7 @@ R packages are extensions of base R that provide additional features or provide 
     + CRAN (https://cran.r-project.org/)
         + The Comprehensive R Archive Network (CRAN)
         + FTP and web servers that store R Packages
-        + Packages are rwquired to meet certain standards
+        + Packages are required to meet certain standards
     + GitHub (https://github.com)
         + These packages are usually under development
         + Contains development versions of many packages available on CRAN
@@ -51,7 +51,7 @@ Open source integrated development environment (IDE) for R developed by R Studio
 
 ###	Create a New Script
 
-1. Click on the new document buttion: 
+1. Click on the new document button: 
 
 ![](images/rstudio/new_document_button.png)
 
@@ -68,7 +68,7 @@ Once you have open an existing script or created a new script, following the ins
 
 #### Source Window
 
-This window appears when you open an exisiting R script or create a new R script [Create a New Script]. You will perform most of your write, edit, save, and execute your code.
+This window appears when you open an existing R script or create a new R script [Create a New Script]. You will perform most of your write, edit, save, and execute your code.
 
 <center>
 ![](images/rstudio/source_tab.png)
@@ -86,7 +86,7 @@ This window pane includes many features. Here we will only focus on the [Environ
 
 * __History Tab:__ view the order in which you have executed code.
 * __Connections:__ connect to databases and show your connections to those databases.
-* __Build:__ will only appear if you are building a custom package becuase it is used to compile the package and add it to your library.
+* __Build:__ will only appear if you are building a custom package because it is used to compile the package and add it to your library.
 * __Git:__ will only appear if you connect your [R Project] to Git (see [GitHub] section).
 
 ##### Environment Tab
@@ -125,7 +125,7 @@ If we want to view a subset of data we can apply a global filter by filtering wi
 ![](images/rstudio/global_filter.png){width=200px}
 </center>
 
-or we can apply column specific fileters if we click the filter button.
+or we can apply column specific filters if we click the filter button.
 
 <center>
 ![](images/rstudio/filter_button.png){width=150px}

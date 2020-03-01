@@ -31,7 +31,7 @@ Best practice is to include a short and unique name within each code chunk heade
 
 #### echo
 
-A logical value (true or false) indicating if the code chunk should be visible in the rendered document. By defualt the code chunk will be visible upon knitting (`echo=true`). To hide a specific code chunk set echo to "false" (`echo=false`).
+A logical value (true or false) indicating if the code chunk should be visible in the rendered document. By default the code chunk will be visible upon knitting (`echo=true`). To hide a specific code chunk set echo to "false" (`echo=false`).
 
 Include the code chunk in the rendered document with `echo=true`.
 ![](images/rmarkdown/code-chunk_echo-true.png)
@@ -41,7 +41,7 @@ Exclude the code chunk in the rendered document with `echo=false`.
 
 #### fig.width, fig.height, and fig.cap
 
-The `fig.width` and `fig.height` options allow you to control the size of the figure generated from a given code chunk. `fig.cap` provides the ability to add a caption below the figure gnerated from a given code chunk.
+The `fig.width` and `fig.height` options allow you to control the size of the figure generated from a given code chunk. `fig.cap` provides the ability to add a caption below the figure generated from a given code chunk.
 
 Here is an example of the plot output form a code chunk.
 ![](images/rmarkdown/fig-options_default.png)
@@ -92,7 +92,7 @@ To insert inline code you need to encompass your R code within:
 For example, you could write:
 
 ![](images/rmarkdown/inline_example_iris-mean-sepal-length.png)
-__Which would render to:__ The mean sepal length found in the _iris_ dataset is `r mean(iris$Sepal.Length)`.
+__Which would render to:__ The mean sepal length found in the _iris_ data set is `r mean(iris$Sepal.Length)`.
 
 I frequently use inline code to make my YAML header date update to the date the document was last rendered.
 
@@ -114,7 +114,7 @@ _The point of this exercise is to get you familiar with code chunks and inline c
         + `lake` (character) lake code: caz = Cazenovia lake, onon = Onondaga, and ot = Otisco
         + `lat` (numeric) latitude of sampling location
         + `long` (numeric) longitude of sampling location
-        + `substrate_size_d50` (numeric) median partical size from pebble count
+        + `substrate_size_d50` (numeric) median particle size from pebble count
         + `conductivity` (numeric) specific conductivity (µS/cm)
         + `richness` (numeric) taxonomic richness
         + `shannon` (numeric) Shannon-Wiener diversity index values

@@ -14,7 +14,7 @@ output: html_document
 * __R Markdown: The Definitive Guide:__ https://bookdown.org/yihui/rmarkdown/
 * __RStudio Lessons:__ https://rmarkdown.rstudio.com/lesson-1.html
 
-Markdown is a markup language for developing and formating documents. R Markdown is an R-package that allows the user to integrate text, R-code, and R-code output into a well formatted document (e.g., HTML, MS Word, PDF). 
+Markdown is a markup language for developing and formatting documents. R Markdown is an R-package that allows the user to integrate text, R-code, and R-code output into a well formatted document (e.g., HTML, MS Word, PDF). 
 
 <center>
 ![](images/rmarkdown/output_types.png)
@@ -56,9 +56,9 @@ Use markdown syntax, some of which is shown in the table below, to format the do
 ![](images/rmarkdown/reference.png){width=800}
 </center>
 
-Once the document is complete (formated with markdown syntax with integrated R code) the document can be knit (rendered) using the package __knitr__.
+Once the document is complete (formatted with markdown syntax with integrated R code) the document can be knit (rendered) using the package __knitr__.
 
-Here is a simple example showing the raw R Markdown (Rmd) file before knitting (rendering) and after knitting. The colors on the far left are ther to help identify elements pre- and post-knitting.
+Here is a simple example showing the raw R Markdown (Rmd) file before knitting (rendering) and after knitting. The colors on the far left are there to help identify elements pre- and post-knitting.
 
 <center>
 ![](images/rmarkdown/raw_to_rendered.png){width=700}

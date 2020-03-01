@@ -70,7 +70,7 @@ Once all the R-scripts extracted from the upstream child R Markdown files have b
 
 1. Create an R Markdown document for each of the sections, designated by Header level 1s, we have created thus far. 
     + save the documents within your project root (where your .Rproj file lives)
-2. Copy the Header and the relavent content below the header. Paste the content into the appropriate R Markdown document.
+2. Copy the Header and the relevant content below the header. Paste the content into the appropriate R Markdown document.
 3. Create a parent R Markdown document.
     + create a code chunk for each section.
     + add `child = ‘insert-file-name-here.Rmd’` to the header of the appropriate code chunk

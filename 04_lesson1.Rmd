@@ -18,7 +18,7 @@ __Overview__
 
 ## Create a New R Project
 
-1. Create a new R project by clicking on the dropdown menu at the top right of RStudio and selecting "New Project"
+1. Create a new R project by clicking on the drop-down menu at the top right of RStudio and selecting "New Project"
 
 ![](images/r_project/create_project.png)
 
@@ -40,9 +40,9 @@ __Overview__
 
 ![](images/r_project/fresh_project.png)
 
-## Navigate Between Packages
+## Navigate Between Projects
 
-Quickly navigate between recently opened R projects by clicking on the dropdown menu at the top right of RStudio and selecting the project of interest.
+Quickly navigate between recently opened R projects by clicking on the drop-down menu at the top right of RStudio and selecting the project of interest.
 
 ![](images/r_project/nav_project.png){width=400px}
 
