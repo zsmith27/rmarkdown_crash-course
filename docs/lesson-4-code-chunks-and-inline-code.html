@@ -156,7 +156,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="lesson-1-r-project-development.html"><a href="lesson-1-r-project-development.html"><i class="fa fa-check"></i><b>6</b> Lesson 1: R Project Development</a><ul>
 <li class="chapter" data-level="6.1" data-path="lesson-1-r-project-development.html"><a href="lesson-1-r-project-development.html#create-a-new-r-project"><i class="fa fa-check"></i><b>6.1</b> Create a New R Project</a></li>
-<li class="chapter" data-level="6.2" data-path="lesson-1-r-project-development.html"><a href="lesson-1-r-project-development.html#navigate-between-packages"><i class="fa fa-check"></i><b>6.2</b> Navigate Between Packages</a></li>
+<li class="chapter" data-level="6.2" data-path="lesson-1-r-project-development.html"><a href="lesson-1-r-project-development.html#navigate-between-projects"><i class="fa fa-check"></i><b>6.2</b> Navigate Between Projects</a></li>
 <li class="chapter" data-level="6.3" data-path="lesson-1-r-project-development.html"><a href="lesson-1-r-project-development.html#recommended-workflow"><i class="fa fa-check"></i><b>6.3</b> Recommended Workflow</a></li>
 <li class="chapter" data-level="6.4" data-path="lesson-1-r-project-development.html"><a href="lesson-1-r-project-development.html#your-turn"><i class="fa fa-check"></i><b>6.4</b> Your Turn</a></li>
 </ul></li>
@@ -169,7 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#non-code-related-syntax"><i class="fa fa-check"></i><b>8.1</b> Non-Code Related Syntax</a><ul>
 <li class="chapter" data-level="8.1.1" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#heading-text"><i class="fa fa-check"></i><b>8.1.1</b> Heading Text</a></li>
 <li class="chapter" data-level="8.1.2" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#plain-text"><i class="fa fa-check"></i><b>8.1.2</b> Plain Text</a></li>
-<li class="chapter" data-level="8.1.3" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#bold-and-italized-text"><i class="fa fa-check"></i><b>8.1.3</b> <strong>Bold</strong> and <em>Italized</em> Text</a></li>
+<li class="chapter" data-level="8.1.3" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#bold-and-italicized-text"><i class="fa fa-check"></i><b>8.1.3</b> <strong>Bold</strong> and <em>Italicized</em> Text</a></li>
 <li class="chapter" data-level="8.1.4" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#lists"><i class="fa fa-check"></i><b>8.1.4</b> Lists</a></li>
 <li class="chapter" data-level="8.1.5" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#your-turn-2"><i class="fa fa-check"></i><b>8.1.5</b> Your Turn</a></li>
 </ul></li>
@@ -237,7 +237,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="echo" class="section level4">
 <h4><span class="header-section-number">10.1.1.2</span> echo</h4>
-<p>A logical value (true or false) indicating if the code chunk should be visible in the rendered document. By defualt the code chunk will be visible upon knitting (<code>echo=true</code>). To hide a specific code chunk set echo to “false” (<code>echo=false</code>).</p>
+<p>A logical value (true or false) indicating if the code chunk should be visible in the rendered document. By default the code chunk will be visible upon knitting (<code>echo=true</code>). To hide a specific code chunk set echo to “false” (<code>echo=false</code>).</p>
 <p>Include the code chunk in the rendered document with <code>echo=true</code>.
 <img src="images/rmarkdown/code-chunk_echo-true.png" /></p>
 <p>Exclude the code chunk in the rendered document with <code>echo=false</code>.
@@ -245,7 +245,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="fig.width-fig.height-and-fig.cap" class="section level4">
 <h4><span class="header-section-number">10.1.1.3</span> fig.width, fig.height, and fig.cap</h4>
-<p>The <code>fig.width</code> and <code>fig.height</code> options allow you to control the size of the figure generated from a given code chunk. <code>fig.cap</code> provides the ability to add a caption below the figure gnerated from a given code chunk.</p>
+<p>The <code>fig.width</code> and <code>fig.height</code> options allow you to control the size of the figure generated from a given code chunk. <code>fig.cap</code> provides the ability to add a caption below the figure generated from a given code chunk.</p>
 <p>Here is an example of the plot output form a code chunk.
 <img src="images/rmarkdown/fig-options_default.png" /></p>
 <p>Here I have specified <code>fig.width</code>, <code>fig.height</code>, and <code>fig.cap</code>. Notice that plot dimensions have changed from the previous image and a caption has been added to the bottom of the figure.
@@ -284,7 +284,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img src="images/rmarkdown/inline_syntax.png" />.</p>
 <p>For example, you could write:</p>
 <p><img src="images/rmarkdown/inline_example_iris-mean-sepal-length.png" />
-<strong>Which would render to:</strong> The mean sepal length found in the <em>iris</em> dataset is 5.8433333.</p>
+<strong>Which would render to:</strong> The mean sepal length found in the <em>iris</em> data set is 5.8433333.</p>
 <p>I frequently use inline code to make my YAML header date update to the date the document was last rendered.</p>
 <p><img src="images/rmarkdown/inline_yaml-date.png" /></p>
 <p>You can reformat the date using the <code>format()</code> function, as depicted in the image below.
@@ -305,7 +305,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>lake</code> (character) lake code: caz = Cazenovia lake, onon = Onondaga, and ot = Otisco</li>
 <li><code>lat</code> (numeric) latitude of sampling location</li>
 <li><code>long</code> (numeric) longitude of sampling location</li>
-<li><code>substrate_size_d50</code> (numeric) median partical size from pebble count</li>
+<li><code>substrate_size_d50</code> (numeric) median particle size from pebble count</li>
 <li><code>conductivity</code> (numeric) specific conductivity (µS/cm)</li>
 <li><code>richness</code> (numeric) taxonomic richness</li>
 <li><code>shannon</code> (numeric) Shannon-Wiener diversity index values</li>
