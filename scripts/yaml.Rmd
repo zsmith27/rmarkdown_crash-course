@@ -2,7 +2,9 @@
 title: "Example"
 author: "Zachary M. Smith"
 date: "`r Sys.Date()`"
-output: html_document
+output: 
+  word_document:
+    reference_docx: word_template.docx
 ---
 
 ```{r load-package-data}
@@ -11,7 +13,7 @@ library(ggplot2)
 data(iris)
 ```
 
-```{r iris-sepal-scatter, include=FALSE, fig.width=10, fig.height=3, fig.cap="Iris sepal length by width."}
+```{r iris-sepal-scatter, fig.cap="Iris, fig.height=3, fig.width=10, include=FALSE}
 ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
   geom_point()
 ```

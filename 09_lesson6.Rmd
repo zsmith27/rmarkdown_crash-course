@@ -5,7 +5,7 @@ date: "2/7/2020"
 output: html_document
 ---
 
-# Lesson 5: Child Documents
+# Lesson 6: Child Documents
 
 In general, I find that a single R Markdown file quickly becomes unwieldy. I recommend breaking the document up into multiple “child” documents and sourcing these child documents in a parent document. My child documents generally represent major subsections of the document. 
 

@@ -3,6 +3,8 @@ title: "Untitled"
 author: "Zachary M. Smith"
 date: "2/7/2020"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 # Lesson 4: Code Chunks and Inline Code
@@ -16,6 +18,23 @@ To insert a code chunk, press __Ctrl + Alt + i__ in the source pane (top left pa
 Inside the code chunk you can write and run R-code. If you print the output of your R-code it will appear below the code chunk in the source pane and the printed output will appear in the final compiled document. This is useful for producing figures and tables.
 
 ![](images/rmarkdown/example_chunk_ouptut.png)
+
+* On the far right of the code chunk you will see three buttons. 
+    + The cog makes it easy to specify code chunk options-- discused below.
+    + The middle button will exectute all code chunks prior to a given function (`Ctrl + Alt + P`)
+    + The far right button will execute all of the code in a code chunk.
+    
+![](images/rmarkdown/code-chunk_tools.png)
+
+### Shortcuts
+
+__You will want to learn these ASAP.__
+
+* `Ctrl + Alt + I` - Insert a new code chunk
+* `Ctrl + Enter` - Run the line of code your cursor is on
+* `Ctrl + Alt + R` - Run all of the code in the document
+* `Ctrl + Alt + P` - Run all code chunks above your cursor
+* `Ctrl + Shift + F10` - Restart R
 
 ### Options
 
@@ -101,7 +120,7 @@ I frequently use inline code to make my YAML header date update to the date the 
 You can reformat the date using the `format()` function, as depicted in the image below.
 ![](images/rmarkdown/inline_yaml-date-format.png)
 
-## Your Turn
+## Your Turn (Part 1)
 
 _The point of this exercise is to get you familiar with code chunks and inline code, NOT to test your R knowledge; therefore, I have included the necessary code below each task._
 
@@ -145,7 +164,108 @@ thesis.df <- thesis.df %>%
 ```{r global-options-example, eval=FALSE}
 knitr::opts_chunk$set()
 ```
-5. Add a code chunk below the "Preproccessing" header and add the following __DT__ code
+
+7. Add a code chunk to generate a scatter plot.
+    + Add a caption
+```{r scatter-example, eval=FALSE}
+ggplot(thesis.df, aes(substrate_size_d50, pct_diptera, color = lake)) +
+  geom_point()
+```
+8. Add a code chunk generate a boxplot.
+    + Modify the figure size
+    + Add a caption
+```{r boxplot-example, eval=FALSE}
+ggplot(thesis.df, aes(lake, richness, fill = lake)) +
+  geom_boxplot()
+```
+9. Add a brief interpretation of the figures into the "Conclusions" section.
+        
+## Interactive Features
+
+Interactive tables and figures are a great way to make your document more interesting and can be very useful for data exploration. I will warn you that if you use these features too frequently your document will become cluttered and will likely load and run slowly.
+
+### DT
+
+The __DT__ package enables you and your readers to interact with tables in your document. You can filter and sort the table to view data that you are most interested in exploring or understanding.
+
+For more information visit https://rstudio.github.io/DT/
+
+```{r}
+library(DT)
+
+datatable(iris)
+```
+
+### Plotly
+
+__Plotly__ makes it easy to create interactive figures. Some of the most useful features  are the ability to...
+
+* rollover figure objects and see a pop-up information related to specific features
+* Zoom-in and zoom-out
+* take a picture of the figure
+
+For more information visit: https://plot.ly/ggplot2/
+
+I generally use __plotly__ in conjunction with __ggplot2__. The __plotly__ function, `ggplotly()`, makes it simple to convert __ggplot2__ figures to interactive __plotly__ figures.
+```{r plotly_example, message=FALSE}
+library(plotly)
+
+scatter.plot <- ggplot(iris, aes(x = Petal.Width, y = Petal.Length,
+                                 color = Species)) +
+  geom_point()
+
+ggplotly(scatter.plot)
+```
+
+### Leaflet
+
+__Leaflet__ is a great resource for creating interactive maps with minimal amount of coding.
+
+For more information visit: https://rstudio.github.io/leaflet/
+
+```{r}
+library(leaflet)
+
+data("quakes")
+
+leaflet(data = quakes,
+        options = leafletOptions(minZoom = 4,
+                                 maxZoom = 18)) %>% 
+  addTiles() %>% 
+  addCircleMarkers(~long, ~lat,
+                   fillOpacity = 0.75,
+                   stroke = FALSE,
+             popup = paste("Sample ID:", quakes$unique_id, "<br/>",
+                           "Magnitude:", quakes$mag, "<br/>",
+                           "Latitude:", quakes$lat, "<br/>",
+                           "Longitude:", quakes$long)
+             )
+```
+
+Another neat feature is the ability to cluster points to better vizualize density. You can do this by setting `clusterOptions = markerClusterOptions()`.
+```{r}
+library(leaflet)
+
+data("quakes")
+
+leaflet(data = quakes,
+        options = leafletOptions(minZoom = 4,
+                                 maxZoom = 18)) %>% 
+  addTiles() %>% 
+  addCircleMarkers(~long, ~lat,
+                   fillOpacity = 0.75,
+                   stroke = FALSE,
+             popup = paste("Sample ID:", quakes$unique_id, "<br/>",
+                           "Magnitude:", quakes$mag, "<br/>",
+                           "Latitude:", quakes$lat, "<br/>",
+                           "Longitude:", quakes$long),
+             clusterOptions = markerClusterOptions()
+             )
+```
+
+## Your Turn (Part 2)
+
+1. Add a code chunk below the "Preproccessing" header and add the following __DT__ code
     + add this link (https://rstudio.github.io/DT/) to your description above the code chunk to describe where you can find more information on __DT__
 ```{r dt-example, eval=FALSE}
 library(DT)
@@ -153,7 +273,7 @@ library(DT)
 datatable(thesis.df, options = list(scrollX = TRUE))
 ```
 
-6. Add a code chunk below the "Study Area" header and add the following __leaflet__ code
+2. Add a code chunk below the "Study Area" header and add the following __leaflet__ code
     + add this link (https://rstudio.github.io/leaflet/) to your description above the code chunk to describe where you can find more information on __leaflet__
 ```{r leaflet-example, eval=FALSE}
 library(leaflet)
@@ -175,22 +295,18 @@ leaflet(data = thesis.df,
                            "Longitude:", thesis.df$long)
              )
 ```
-7. Add a code chunk to generate a scatter plot.
-    + Add a caption
-```{r scatter-example, eval=FALSE}
-ggplot(thesis.df, aes(substrate_size_d50, pct_diptera, color = lake)) +
-  geom_point()
-```
-8. Add a code chunk generate a boxplot.
-    + Modify the figure size
-    + Add a caption
-```{r boxplot-example, eval=FALSE}
-ggplot(thesis.df, aes(lake, richness, fill = lake)) +
-  geom_boxplot()
-```
-9. Add a brief interpretation of the figures into the "Conclusions" section.
-10. __Bonus:__ If you have enough time, edit the scatter plot code chunk to make the figure interactive with __plotly__
+
+3. Edit the scatter plot code chunk to make the figure interactive with __plotly__
     + add this link (https://plot.ly/ggplot2/) to your description above the code chunk
     + play around with the interactive plot and the tools provided at the top right of the plot
         + For example, you can zoom in, click on points to get more information, take a snapshot of the current plot, etc.
+```{r scatter-sub-dip_example, message=FALSE, eval=FALSE}
+library(plotly)
+
+scatter.plot <- ggplot(thesis.df, aes(substrate_size_d50, pct_diptera)) +
+  geom_point(aes(color = lake)) +
+  geom_smooth(method = "lm")
+
+ggplotly(scatter.plot)
+```
         

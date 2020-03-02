@@ -101,7 +101,7 @@ leaflet(data = thesis.df,
 
 ```
 
-# Plot
+# Plot {.tabset}
 
 ## Scatter Plot
 

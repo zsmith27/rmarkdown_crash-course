@@ -1,0 +1,31 @@
+---
+title: "Iris: `r params$species` Summary Stats"
+author: "Zachary M. Smith"
+date: "3/1/2020"
+output: html_document
+params:
+  species: "setosa"
+---
+
+```{r}
+data(iris)
+
+iris.sub <- iris[iris$Species %in% params$species, ]
+```
+
+# Summary Stats for `r params$species`
+
+* Mean Sepal Length = `r mean(iris.sub$Sepal.Length)`
+* Mean Sepal Width = `r mean(iris.sub$Sepal.Width)`
+* Mean Petal Length = `r mean(iris.sub$Petal.Length)`
+* Mean Petal Width = `r mean(iris.sub$Petal.Width)`
+
+```{r}
+library(ggplot2)
+
+ggplot(iris.sub, aes(Petal.Length, Petal.Width)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+

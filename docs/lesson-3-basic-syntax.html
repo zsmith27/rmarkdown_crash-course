@@ -24,7 +24,7 @@
 <meta name="author" content="Zachary M. Smith" />
 
 
-<meta name="date" content="2020-02-29" />
+<meta name="date" content="2020-03-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +50,30 @@
 
 
 
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.12/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<script src="libs/plotly-binding-4.9.2/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet" />
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.Default.css" rel="stylesheet" />
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.freezable.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.layersupport.js"></script>
 
 
 <style type="text/css">
@@ -163,44 +187,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html"><i class="fa fa-check"></i><b>7</b> Lesson 2: Rmd Creation</a><ul>
 <li class="chapter" data-level="7.1" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#create-a-new-document"><i class="fa fa-check"></i><b>7.1</b> Create a New Document</a></li>
 <li class="chapter" data-level="7.2" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#compile-the-document"><i class="fa fa-check"></i><b>7.2</b> Compile the Document</a></li>
-<li class="chapter" data-level="7.3" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#your-turn-1"><i class="fa fa-check"></i><b>7.3</b> Your Turn</a></li>
+<li class="chapter" data-level="7.3" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#document-types"><i class="fa fa-check"></i><b>7.3</b> Document Types</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#html"><i class="fa fa-check"></i><b>7.3.1</b> HTML</a></li>
+<li class="chapter" data-level="7.3.2" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#pdf"><i class="fa fa-check"></i><b>7.3.2</b> PDF</a></li>
+<li class="chapter" data-level="7.3.3" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#word"><i class="fa fa-check"></i><b>7.3.3</b> Word</a></li>
+<li class="chapter" data-level="7.3.4" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#templates"><i class="fa fa-check"></i><b>7.3.4</b> Templates</a></li>
+<li class="chapter" data-level="7.3.5" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#other-types"><i class="fa fa-check"></i><b>7.3.5</b> Other Types</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#your-turn-1"><i class="fa fa-check"></i><b>7.4</b> Your Turn</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html"><i class="fa fa-check"></i><b>8</b> Lesson 3: Basic Syntax</a><ul>
-<li class="chapter" data-level="8.1" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#non-code-related-syntax"><i class="fa fa-check"></i><b>8.1</b> Non-Code Related Syntax</a><ul>
-<li class="chapter" data-level="8.1.1" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#heading-text"><i class="fa fa-check"></i><b>8.1.1</b> Heading Text</a></li>
-<li class="chapter" data-level="8.1.2" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#plain-text"><i class="fa fa-check"></i><b>8.1.2</b> Plain Text</a></li>
-<li class="chapter" data-level="8.1.3" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#bold-and-italicized-text"><i class="fa fa-check"></i><b>8.1.3</b> <strong>Bold</strong> and <em>Italicized</em> Text</a></li>
-<li class="chapter" data-level="8.1.4" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#lists"><i class="fa fa-check"></i><b>8.1.4</b> Lists</a></li>
-<li class="chapter" data-level="8.1.5" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#your-turn-2"><i class="fa fa-check"></i><b>8.1.5</b> Your Turn</a></li>
+<li class="chapter" data-level="8.1" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#heading-text"><i class="fa fa-check"></i><b>8.1</b> Heading Text</a></li>
+<li class="chapter" data-level="8.2" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#plain-text"><i class="fa fa-check"></i><b>8.2</b> Plain Text</a></li>
+<li class="chapter" data-level="8.3" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#bold-and-italicized-text"><i class="fa fa-check"></i><b>8.3</b> <strong>Bold</strong> and <em>Italicized</em> Text</a></li>
+<li class="chapter" data-level="8.4" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#lists"><i class="fa fa-check"></i><b>8.4</b> Lists</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#unordered-lists"><i class="fa fa-check"></i><b>8.4.1</b> Unordered Lists</a></li>
+<li class="chapter" data-level="8.4.2" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#ordered-lists"><i class="fa fa-check"></i><b>8.4.2</b> Ordered Lists</a></li>
 </ul></li>
+<li class="chapter" data-level="8.5" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#link-to-a-section"><i class="fa fa-check"></i><b>8.5</b> Link to a Section</a></li>
+<li class="chapter" data-level="8.6" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#hyperlink"><i class="fa fa-check"></i><b>8.6</b> Hyperlink</a></li>
+<li class="chapter" data-level="8.7" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#insert-images"><i class="fa fa-check"></i><b>8.7</b> Insert Images</a></li>
+<li class="chapter" data-level="8.8" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#tabbed-sections"><i class="fa fa-check"></i><b>8.8</b> Tabbed Sections</a></li>
+<li class="chapter" data-level="8.9" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#your-turn-2"><i class="fa fa-check"></i><b>8.9</b> Your Turn</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html"><i class="fa fa-check"></i><b>9</b> Lesson 4: YAML Headers</a><ul>
-<li class="chapter" data-level="9.1" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#standard"><i class="fa fa-check"></i><b>9.1</b> Standard</a></li>
-<li class="chapter" data-level="9.2" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#table-of-contents-toc"><i class="fa fa-check"></i><b>9.2</b> Table of Contents (TOC)</a><ul>
-<li class="chapter" data-level="9.2.1" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#floating-table-of-contents-toc"><i class="fa fa-check"></i><b>9.2.1</b> Floating Table of Contents (TOC)</a></li>
+<li class="chapter" data-level="9.1" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#title"><i class="fa fa-check"></i><b>9.1</b> Title</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#subtitle"><i class="fa fa-check"></i><b>9.1.1</b> Subtitle</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#themes"><i class="fa fa-check"></i><b>9.3</b> Themes</a></li>
-<li class="chapter" data-level="9.4" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#code-folding"><i class="fa fa-check"></i><b>9.4</b> Code Folding</a><ul>
-<li class="chapter" data-level="9.4.1" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#example-without-code-folding"><i class="fa fa-check"></i><b>9.4.1</b> Example without Code Folding</a></li>
-<li class="chapter" data-level="9.4.2" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#examples-with-code-folding"><i class="fa fa-check"></i><b>9.4.2</b> Examples with Code Folding</a></li>
+<li class="chapter" data-level="9.2" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#authors"><i class="fa fa-check"></i><b>9.2</b> Author(s)</a></li>
+<li class="chapter" data-level="9.3" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#date"><i class="fa fa-check"></i><b>9.3</b> Date</a></li>
+<li class="chapter" data-level="9.4" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#table-of-contents-toc"><i class="fa fa-check"></i><b>9.4</b> Table of Contents (TOC)</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#floating-table-of-contents-toc"><i class="fa fa-check"></i><b>9.4.1</b> Floating Table of Contents (TOC)</a></li>
 </ul></li>
-<li class="chapter" data-level="9.5" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#ymlthis"><i class="fa fa-check"></i><b>9.5</b> ymlthis</a></li>
-<li class="chapter" data-level="9.6" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#your-turn-3"><i class="fa fa-check"></i><b>9.6</b> Your Turn</a></li>
+<li class="chapter" data-level="9.5" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#themes"><i class="fa fa-check"></i><b>9.5</b> Themes</a></li>
+<li class="chapter" data-level="9.6" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#code-folding"><i class="fa fa-check"></i><b>9.6</b> Code Folding</a><ul>
+<li class="chapter" data-level="9.6.1" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#example-without-code-folding"><i class="fa fa-check"></i><b>9.6.1</b> Example without Code Folding</a></li>
+<li class="chapter" data-level="9.6.2" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#examples-with-code-folding"><i class="fa fa-check"></i><b>9.6.2</b> Examples with Code Folding</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#output"><i class="fa fa-check"></i><b>9.7</b> output</a></li>
+<li class="chapter" data-level="9.8" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#custom-template"><i class="fa fa-check"></i><b>9.8</b> Custom Template</a></li>
+<li class="chapter" data-level="9.9" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#ymlthis"><i class="fa fa-check"></i><b>9.9</b> ymlthis</a></li>
+<li class="chapter" data-level="9.10" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#your-turn-3"><i class="fa fa-check"></i><b>9.10</b> Your Turn</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html"><i class="fa fa-check"></i><b>10</b> Lesson 4: Code Chunks and Inline Code</a><ul>
 <li class="chapter" data-level="10.1" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#code-chunks"><i class="fa fa-check"></i><b>10.1</b> Code Chunks</a><ul>
-<li class="chapter" data-level="10.1.1" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#options"><i class="fa fa-check"></i><b>10.1.1</b> Options</a></li>
+<li class="chapter" data-level="10.1.1" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#shortcuts-1"><i class="fa fa-check"></i><b>10.1.1</b> Shortcuts</a></li>
+<li class="chapter" data-level="10.1.2" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#options"><i class="fa fa-check"></i><b>10.1.2</b> Options</a></li>
 </ul></li>
 <li class="chapter" data-level="10.2" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#inline-code"><i class="fa fa-check"></i><b>10.2</b> Inline Code</a></li>
-<li class="chapter" data-level="10.3" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#your-turn-4"><i class="fa fa-check"></i><b>10.3</b> Your Turn</a></li>
+<li class="chapter" data-level="10.3" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#your-turn-part-1"><i class="fa fa-check"></i><b>10.3</b> Your Turn (Part 1)</a></li>
+<li class="chapter" data-level="10.4" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#interactive-features"><i class="fa fa-check"></i><b>10.4</b> Interactive Features</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#dt"><i class="fa fa-check"></i><b>10.4.1</b> DT</a></li>
+<li class="chapter" data-level="10.4.2" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#plotly"><i class="fa fa-check"></i><b>10.4.2</b> Plotly</a></li>
+<li class="chapter" data-level="10.4.3" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#leaflet"><i class="fa fa-check"></i><b>10.4.3</b> Leaflet</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="lesson-5-child-documents.html"><a href="lesson-5-child-documents.html"><i class="fa fa-check"></i><b>11</b> Lesson 5: Child Documents</a><ul>
-<li class="chapter" data-level="11.1" data-path="lesson-5-child-documents.html"><a href="lesson-5-child-documents.html#extract-and-run-r-code-from-r-markdown-files"><i class="fa fa-check"></i><b>11.1</b> Extract and Run R-Code from R Markdown Files</a><ul>
-<li class="chapter" data-level="11.1.1" data-path="lesson-5-child-documents.html"><a href="lesson-5-child-documents.html#r-code"><i class="fa fa-check"></i><b>11.1.1</b> R Code</a></li>
+<li class="chapter" data-level="10.5" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#your-turn-part-2"><i class="fa fa-check"></i><b>10.5</b> Your Turn (Part 2)</a></li>
 </ul></li>
-<li class="chapter" data-level="11.2" data-path="lesson-5-child-documents.html"><a href="lesson-5-child-documents.html#your-turn-5"><i class="fa fa-check"></i><b>11.2</b> Your Turn</a></li>
+<li class="chapter" data-level="11" data-path="lesson-6-child-documents.html"><a href="lesson-6-child-documents.html"><i class="fa fa-check"></i><b>11</b> Lesson 6: Child Documents</a><ul>
+<li class="chapter" data-level="11.1" data-path="lesson-6-child-documents.html"><a href="lesson-6-child-documents.html#extract-and-run-r-code-from-r-markdown-files"><i class="fa fa-check"></i><b>11.1</b> Extract and Run R-Code from R Markdown Files</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="lesson-6-child-documents.html"><a href="lesson-6-child-documents.html#r-code"><i class="fa fa-check"></i><b>11.1.1</b> R Code</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="lesson-6-parameterized-reports.html"><a href="lesson-6-parameterized-reports.html"><i class="fa fa-check"></i><b>12</b> Lesson 6: Parameterized Reports</a></li>
+<li class="chapter" data-level="11.2" data-path="lesson-6-child-documents.html"><a href="lesson-6-child-documents.html#your-turn-4"><i class="fa fa-check"></i><b>11.2</b> Your Turn</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="lesson-7-parameterized-reports.html"><a href="lesson-7-parameterized-reports.html"><i class="fa fa-check"></i><b>12</b> Lesson 7: Parameterized Reports</a><ul>
+<li class="chapter" data-level="12.1" data-path="lesson-7-parameterized-reports.html"><a href="lesson-7-parameterized-reports.html#params"><i class="fa fa-check"></i><b>12.1</b> params</a></li>
+<li class="chapter" data-level="12.2" data-path="lesson-7-parameterized-reports.html"><a href="lesson-7-parameterized-reports.html#knitting"><i class="fa fa-check"></i><b>12.2</b> Knitting</a></li>
+<li class="chapter" data-level="12.3" data-path="lesson-7-parameterized-reports.html"><a href="lesson-7-parameterized-reports.html#rmarkdownrender"><i class="fa fa-check"></i><b>12.3</b> rmarkdown::render()</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -226,18 +279,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <center>
 <img src="images/rmarkdown/reference.png" width="800" />
 </center>
-<div id="non-code-related-syntax" class="section level2">
-<h2><span class="header-section-number">8.1</span> Non-Code Related Syntax</h2>
-<div id="heading-text" class="section level3">
-<h3><span class="header-section-number">8.1.1</span> Heading Text</h3>
+<div id="heading-text" class="section level2">
+<h2><span class="header-section-number">8.1</span> Heading Text</h2>
 <p>Heading text follows one or more hash-sign(s) (#). The number of hash-signs determines the hierarchy of headings. For example, “# Heading 1” would represent the primary heading, “## Heading 2” would represent the secondary heading, “###Heading 3” would represent the tertiary heading, and so forth.</p>
 </div>
-<div id="plain-text" class="section level3">
-<h3><span class="header-section-number">8.1.2</span> Plain Text</h3>
+<div id="plain-text" class="section level2">
+<h2><span class="header-section-number">8.2</span> Plain Text</h2>
 <p>Simply add text below the YAML header. To start a new paragraph, you will need to end your plain text line with two (2) spaces.</p>
 </div>
-<div id="bold-and-italicized-text" class="section level3">
-<h3><span class="header-section-number">8.1.3</span> <strong>Bold</strong> and <em>Italicized</em> Text</h3>
+<div id="bold-and-italicized-text" class="section level2">
+<h2><span class="header-section-number">8.3</span> <strong>Bold</strong> and <em>Italicized</em> Text</h2>
 <p>There are two ways to format your text to be <strong>bold</strong> or <em>italicized</em>.</p>
 <ul>
 <li><strong>Bold</strong>
@@ -251,12 +302,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Surround your text with one (1) underscore (_) on each side.</li>
 </ul></li>
 </ul>
+<p>The markdown syntax…</p>
+<p><img src="images/rmarkdown/bold_italics_syntax.png" /></p>
+<p>which renders to…</p>
+<p><strong>Bold Text Example</strong></p>
+<p><strong>Bold Text Example</strong></p>
+<p><em>Italicize Text Example</em></p>
+<p><em>Italicize Text Example</em></p>
 </div>
-<div id="lists" class="section level3">
-<h3><span class="header-section-number">8.1.4</span> Lists</h3>
-<div id="unordered-lists" class="section level4">
-<h4><span class="header-section-number">8.1.4.1</span> Unordered Lists</h4>
+<div id="lists" class="section level2">
+<h2><span class="header-section-number">8.4</span> Lists</h2>
+<div id="unordered-lists" class="section level3">
+<h3><span class="header-section-number">8.4.1</span> Unordered Lists</h3>
 <p>Unordered or bulleted lists can be generated by using a single asterisk (*) followed by a space and the plain text intended to represent the bullet. To add another bullet, just hit enter or return and follow the previous steps. To add sub-bullets, insert two spaces and a plus sign (+) followed by a space and the plain text intended to represent the sub-bullet. You can do this at multiple levels; meaning you can add four spaces and a plus sign (+) to insert a sub-sub-bullet and six spaces and a plus sign (+) to add a sub-sub-sub-bullet.</p>
+<p>The markdown syntax…</p>
+<p><img src="images/rmarkdown/unordered_list_syntax.png" /></p>
+<p>which renders to…</p>
 <ul>
 <li>Bullet 1</li>
 <li>Bullet 2
@@ -272,9 +333,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </div>
-<div id="ordered-lists" class="section level4">
-<h4><span class="header-section-number">8.1.4.2</span> Ordered Lists</h4>
+<div id="ordered-lists" class="section level3">
+<h3><span class="header-section-number">8.4.2</span> Ordered Lists</h3>
 <p>Follow the steps in Unordered Lists but instead of using asterisk (*) use sequential numbers followed by a period (.)– this cannot be done for sub-bullets. For example, “1.”, “2.”, and “3.”.</p>
+<p>The markdown syntax…</p>
+<p><img src="images/rmarkdown/ordered_list_syntax.png" /></p>
+<p>which renders to…</p>
 <ol style="list-style-type: decimal">
 <li>Bullet 1</li>
 </ol>
@@ -282,10 +346,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Sub-Bullet 1</li>
 </ul>
 <ol start="2" style="list-style-type: decimal">
-<li>Bullet 2
-+. Sub-Bullet 1</li>
+<li>Bullet 2</li>
 </ol>
 <ul>
+<li>Sub-Bullet 1</li>
 <li>Sub-Bullet 2
 <ul>
 <li>Sub-Sub-Bullet 1</li>
@@ -293,12 +357,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 </div>
-<div id="your-turn-2" class="section level3">
-<h3><span class="header-section-number">8.1.5</span> Your Turn</h3>
+<div id="link-to-a-section" class="section level2">
+<h2><span class="header-section-number">8.5</span> Link to a Section</h2>
+<p>You can link to a section within the document by surronding the name of the section in square brackets.</p>
+<p>The markdown sytnax…</p>
+<p><code>[Lesson 3: Basic Syntax]</code></p>
+<p>would render to this…</p>
+<p><a href="lesson-3-basic-syntax.html#lesson-3-basic-syntax">Lesson 3: Basic Syntax</a></p>
+<p>If you click on the “Lesson 3: Basic Syntax” above, it will jump you to the head of this section.</p>
+</div>
+<div id="hyperlink" class="section level2">
+<h2><span class="header-section-number">8.6</span> Hyperlink</h2>
+<p>You simply need to paste in a full URL into your document and it will automatically be recognized as a hyperlink. If you want to hide the full link and represent it with text, then surrond the text with square brackets followed by the URL in parenthesis.</p>
+<p>The markdown syntax…</p>
+<p><code>[link](https://bookdown.org/yihui/rmarkdown/)</code></p>
+<p>would render to this…</p>
+<p><a href="https://bookdown.org/yihui/rmarkdown/">link</a>.</p>
+</div>
+<div id="insert-images" class="section level2">
+<h2><span class="header-section-number">8.7</span> Insert Images</h2>
+<p>You can insert images into your document using syntax similar to the hyperlink syntax above.</p>
+<p>In the code below you can see the file path the to the image. This image will render without a caption</p>
+<p><code>![](images/hex_symbols/rmarkdown.png)</code></p>
+<p><img src="images/hex_symbols/rmarkdown.png" /></p>
+<p>You can add a caption for the image in between the square brackets.</p>
+<p><code>![This is my caption for the image.](images/hex_symbols/rmarkdown.png)</code></p>
+<div class="figure">
+<img src="images/hex_symbols/rmarkdown.png" alt="This is my caption for the image." />
+<p class="caption">This is my caption for the image.</p>
+</div>
+<p>You can control the size of the image like this…</p>
+<p><code>![This is my caption for the image.](images/hex_symbols/rmarkdown.png){width=200px}</code></p>
+<div class="figure">
+<img src="images/hex_symbols/rmarkdown.png" alt="This is my caption for the image." width="100" />
+<p class="caption">This is my caption for the image.</p>
+</div>
+<p>You can center the image like this…</p>
+<p><img src="images/rmarkdown/centered_image.png" /></p>
+<center>
+<img src="images/hex_symbols/rmarkdown.png" alt="This is my caption for the image." width="100" />
+</center>
+</div>
+<div id="tabbed-sections" class="section level2">
+<h2><span class="header-section-number">8.8</span> Tabbed Sections</h2>
+<p>Tabbed sections can be added to section of an HTML documents that will fold all of the subsequent sub-sections into seperate tabs. To do this you specify a section header followed by <code>{.tabset}</code>. For example, <code>## My Section Header {.tabset}</code>.</p>
+<p><img src="images/rmarkdown/tabset.png" /></p>
+<p>Note this feature is not available for use with <strong>bookdown</strong>.</p>
+</div>
+<div id="your-turn-2" class="section level2">
+<h2><span class="header-section-number">8.9</span> Your Turn</h2>
 <ol style="list-style-type: decimal">
 <li>Delete everything below the YAML header.</li>
-<li>Add the following level-1 headers and knit the document.</li>
-</ol>
+<li>Add the following level-1 headers and knit the document.
 <ul>
 <li>Introduction</li>
 <li>Workflow</li>
@@ -307,30 +417,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Study Area</li>
 <li>Plot</li>
 <li>Conclusions</li>
-</ul>
-<ol start="3" style="list-style-type: decimal">
-<li>Add two level-2 headers below the Plot header and knit the document.</li>
-</ol>
+</ul></li>
+<li>Add two level-2 headers below the Plot header and knit the document.
 <ul>
 <li>Scatter Plot</li>
 <li>LOESS Plot</li>
-</ul>
-<ol start="3" style="list-style-type: decimal">
-<li>Add plain text below the Introduction header and knit the document.</li>
-</ol>
+</ul></li>
+<li>Add plain text below the Introduction header and knit the document.
 <ul>
 <li>Be sure to include some <strong>bold</strong> and <em>italicized</em> text.</li>
 <li>Explain the purpose of the document (e.g., “This document was created during the 2020 NABs R Markdown workshop and will serve as an example workflow for my future use of R Markdown.”)</li>
-</ul>
-<ol start="4" style="list-style-type: decimal">
-<li>Add unordered or ordered list below the Workflow header and knit the document.</li>
-</ol>
+<li>Include the hyperlink to R Markdown: The Definitive Guide (<a href="https://bookdown.org/yihui/rmarkdown/" class="uri">https://bookdown.org/yihui/rmarkdown/</a>). This will be a helpful resource in the future.</li>
+</ul></li>
+<li>Add unordered or ordered list below the Workflow header and knit the document.
 <ul>
 <li>Describe the workflow we have talked about thus far (e.g., create an R project, add folders, create an rmarkdown document, knit the document to render).</li>
 <li>Add sub-bullets with helpful details.</li>
-</ul>
+</ul></li>
+<li>Add the image provided with the data to the introduction.</li>
+<li>Make the Plot section tabbed section with <code>{.tabset}</code>.</li>
+</ol>
 
-</div>
 </div>
 </div>
             </section>

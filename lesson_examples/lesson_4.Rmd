@@ -27,7 +27,7 @@ This document was created during the _2020 NABs R Markdown workshop_ and will se
 
 # Study Area
 
-# Plot
+# Plot  {.tabset}
 
 ## Scatter Plot
 
