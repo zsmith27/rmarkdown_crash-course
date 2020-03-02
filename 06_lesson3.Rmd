@@ -15,7 +15,7 @@ output: html_document
 
 ##	Heading Text
 
-Heading text follows one or more hash-sign(s) (#). The number of hash-signs determines the hierarchy of headings. For example, “# Heading 1” would represent the primary heading, “## Heading 2” would represent the secondary heading, “###Heading 3” would represent the tertiary heading, and so forth.
+Heading text follows one or more hash-sign(s) (#). The number of hash-signs determines the hierarchy of headings. For example, “# Heading 1” would represent the primary heading, “## Heading 2” would represent the secondary heading, “### Heading 3” would represent the tertiary heading, and so forth.
 
 ##	Plain Text
 
@@ -26,11 +26,11 @@ Simply add text below the YAML header. To start a new paragraph, you will need t
 There are two ways to format your text to be __bold__ or _italicized_.
 
 * __Bold__
-  + Surround your text with two (2) asterisks (*) on each side.
-  + Surround your text with two (2) underscores (_) on each side.
+    + Surround your text with two (2) asterisks (*) on each side.
+    + Surround your text with two (2) underscores (_) on each side.
 * _Italicized_
-  + Surround your text with one (1) asterisk (*) on each side.
-  + Surround your text with one (1) underscore (_) on each side.
+    + Surround your text with one (1) asterisk (*) on each side.
+    + Surround your text with one (1) underscore (_) on each side.
   
 The markdown syntax...
 
@@ -60,10 +60,10 @@ which renders to...
 
 * Bullet 1
 * Bullet 2
-  + Sub-Bullet 1
-  + Sub-Bullet 2
-    + Sub-Sub-Bullet 1
-      + Sub-Sub-Bullet 1
+    + Sub-Bullet 1
+    + Sub-Bullet 2
+        + Sub-Sub-Bullet 1
+        + Sub-Sub-Bullet 2
 
 ### Ordered Lists
 
@@ -76,17 +76,17 @@ The markdown syntax...
 which renders to...
 
 1. Bullet 1
-  + Sub-Bullet 1
+    + Sub-Bullet 1
 2. Bullet 2
-  + Sub-Bullet 1
-  + Sub-Bullet 2
-    + Sub-Sub-Bullet 1
+    + Sub-Bullet 1
+    + Sub-Bullet 2
+        + Sub-Sub-Bullet 1
 
 ## Link to a Section
 
-You can link to a section within the document by surronding the name of the section in square brackets. 
+You can link to a section within the document by surrounding the name of the section in square brackets. 
 
-The markdown sytnax...
+The markdown syntax...
 
 `[Lesson 3: Basic Syntax]`
 
@@ -98,7 +98,11 @@ If you click on the "Lesson 3: Basic Syntax" above, it will jump you to the head
 
 ## Hyperlink
 
-You simply need to paste in a full URL into your document and it will automatically be recognized as a hyperlink. If you want to hide the full link and represent it with text, then surrond the text with square brackets followed by the URL in parenthesis. 
+You simply need to paste in a full URL into your document and it will automatically be recognized as a hyperlink. For example...
+
+https://bookdown.org/yihui/rmarkdown
+
+If you want to hide the full link and represent it with text, then surround the text with square brackets followed by the URL in parenthesis. 
 
 The markdown syntax...
 
@@ -130,7 +134,7 @@ You can control the size of the image like this...
 
 ![This is my caption for the image.](images/hex_symbols/rmarkdown.png){width=100px}
 
-You can center the image like this...
+You can center the image with HTML like this...
 
 ![](images/rmarkdown/centered_image.png)
 
@@ -140,7 +144,7 @@ You can center the image like this...
 
 ## Tabbed Sections
 
-Tabbed sections can be added to section of an HTML documents that will fold all of the subsequent sub-sections into seperate tabs. To do this you specify a section header followed by `{.tabset}`. For example, `## My Section Header {.tabset}`.
+Tabbed sections can be added to section of an HTML documents that will fold all of the subsequent sub-sections into separate tabs. To do this you specify a section header followed by `{.tabset}`. For example, `## My Section Header {.tabset}`.
 
 ![](images/rmarkdown/tabset.png){}
 
@@ -148,7 +152,7 @@ Note this feature is not available for use with __bookdown__.
 
 ## Your Turn
 
-1. Delete everything below the YAML header.
+1. Using the .Rmd file created in [Lesson 2: Rmd Creation], delete everything below the YAML header.
 2. Add the following level-1 headers and knit the document.
     + Introduction
     + Workflow
@@ -167,7 +171,7 @@ Note this feature is not available for use with __bookdown__.
 4. Add unordered or ordered list below the Workflow header and knit the document.
     + Describe the workflow we have talked about thus far (e.g., create an R project, add folders, create an rmarkdown document, knit the document to render).
     + Add sub-bullets with helpful details.
-5. Add the image provided with the data to the introduction.
+5. Add the image provided with the data to the Introduction.
 6. Make the Plot section tabbed section with `{.tabset}`.
 
 

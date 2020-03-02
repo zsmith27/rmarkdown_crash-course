@@ -1,0 +1,14 @@
+---
+title: "Untitled"
+author: "Zachary M. Smith"
+date: "3/2/2020"
+output: html_document
+---
+
+# Bonus Lesson: Bookdown 
+
+<center>
+![](images/hex_symbols/bookdown.png){width=150px}
+</center>
+
+The __bookdown__ package provides tools for creating books and ebooks. This document was created with __bookdown__.

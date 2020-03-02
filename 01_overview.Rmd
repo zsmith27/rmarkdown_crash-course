@@ -13,23 +13,37 @@ A large portion of report writing is often consumed by tedious edits and a disju
 ## Agenda 
 
 - __TUESDAY, MARCH 3, 2020 (10:00-4:00)__
-  * 10:00 – 10:15 R Markdown: Introduction
-  * 10:15 – 10:45 R and R Studio
-  * 10:45 – 11:15 Lesson 1: Project Development
-  * 11:15 – 12:00 Lesson 2: Rmd Creation
-  * 12:00 – 1:00 LUNCH
-  * 1:00 – 1:45 Lesson 3: Basic Syntax
-  * 1:45 – 2:30 Lesson 4: YAML Headers
-  * 2:30 – 2:40 BREAK
-  * 2:40 – 3:50 Lesson 5: Code Chunks
-  * 3:50 – 4:00 Closing Remarks
-- **WEDNESDAY, MARCH 4, 2020 (9:00-12:00)**
-  * LIGHT BREAKFAST
-  * 9:00 – 9:10 Recap
-  * 9:10 – 3:50 Lesson 6: Child Documents
-  * 9:15 – 10:20 Lesson 7: Parameterized Reports
-  * 10:20 – 10:30 BREAK
-  * 10:30 – 11:50 Open Practice Session (bring your own data)
-  * 11:50 – 12:00 Closing Remarks
-  * 12:00 – 1:00 (LUNCH ON YOUR OWN – CONFERENCE BEGINS @ 1:00)
+    * 10:00 – 10:15 R Markdown: Introduction
+    * 10:15 – 10:45 R and R Studio
+    * 10:45 – 11:15 Lesson 1: Project Development
+    * 11:15 – 12:00 Lesson 2: Rmd Creation
+    * __12:00 – 1:00 LUNCH__
+    * 1:00 – 1:45 Lesson 3: Basic Syntax
+    * 1:45 – 2:30 Lesson 4: YAML Headers
+    * __2:30 – 2:40 BREAK__
+    * 2:40 – 3:50 Lesson 5: Code Chunks
+    * 3:50 – 4:00 Closing Remarks
+- __WEDNESDAY, MARCH 4, 2020 (9:00-12:00)__
+    * __LIGHT BREAKFAST__
+    * 9:00 – 9:10 Recap
+    * 9:10 – 9:30 Lesson 6: Child Documents
+    * 9:30 – 10:20 Lesson 7: Parameterized Reports
+    * __10:20 – 10:30 BREAK__
+    * 10:30 – 11:50 Open Practice Session (bring your own data)
+    * 11:50 – 12:00 Closing Remarks
+    * __12:00 – 1:00 (LUNCH ON YOUR OWN – CONFERENCE BEGINS @ 1:00)__
 
+## Resources
+
+* __Cheat Sheets:__ https://rstudio.com/resources/cheatsheets/
+* __rmarkdown:__ 
+    + https://bookdown.org/yihui/rmarkdown/
+    + https://rmarkdown.rstudio.com/
+        + __Lessons:__ https://rmarkdown.rstudio.com/lesson-1.html
+    + __parameterized reports:__ https://www.coursera.org/lecture/reproducible-templates-analysis/adding-parameters-in-a-document-template-6fQwc
+* __bookdown:__ https://bookdown.org/yihui/bookdown/
+* __blogdown:__ https://bookdown.org/yihui/blogdown/
+* __Leaflet:__ https://rstudio.github.io/leaflet/
+* __DT:__ https://rstudio.github.io/DT/
+* __Plotly:__ https://plot.ly/r/
+* __Dygraphs:__ https://rstudio.github.io/dygraphs/

@@ -15,11 +15,11 @@ output: html_document
 
 2. Click on R Markdown:
 
-![](images/rmarkdown/rmarkdown_button.png){width=300px}
+![](images/rmarkdown/rmarkdown_button.png){width=400px}
 
 3. Provide a "Title:", select the "Default Output Format:", and click "OK"
 
-![](images/rmarkdown/new_rmarkdown_window.png){width=400px}
+![](images/rmarkdown/new_rmarkdown_window.png){width=600px}
 
 4. A new R Markdown document will appear with some instructions and example text/code.
 
@@ -45,11 +45,11 @@ There are multiple document types available which designate how the .Rmd file wi
 
 ### HTML
 
-Knittin to a HyperText Markup Language (HTML) document is the default for R Markdown. Using HTML will enable you to add interactive features to your document. To view HTML documents, simply open them in your internet browser of choice-- by default, your machine should open HTML documents in your default browser automatically.
+Knitting to a Hyper Text Markup Language (HTML) document is the default for R Markdown. Using HTML will enable you to add interactive features to your document. To view HTML documents, simply open them in your internet browser of choice-- by default, your machine should open HTML documents in your default browser automatically.
 
 #### R Markdown vs. R Notebook
 
-R Markdown documents (`html_documents`) and R Notebook documents (`html_notebook`) are very similar; in fact, an R Notebook document is a special type of R Markdown document. The main diffence is using R Markdown document (`html_documents`) you have to knit (render) the entire document each time you want to preview the document, even if you have made a minor change. However, using an R Notebook document (`html_notebook`) you can view a preview of the final document without rendering the entire document. 
+R Markdown documents (`html_documents`) and R Notebook documents (`html_notebook`) are very similar; in fact, an R Notebook document is a special type of R Markdown document. The main difference is using R Markdown document (`html_documents`) you have to knit (render) the entire document each time you want to preview the document, even if you have made a minor change. However, using an R Notebook document (`html_notebook`) you can view a preview of the final document without rendering the entire document. 
 
 For all document types you can specify how you want to preview the rendered documents by clicking on the cog in the Source window toolbar to reveal a drop-down menu of options. The recommended setup for use of an R Notebook document would be to specify you want to view the preview in the Viewer pane (i.e., the bottom right pane shared with Files, Plots, Packages, and Help).
 
@@ -97,7 +97,7 @@ These templates may give you a jump-start to provide a large portion of the form
 
 #### Custom Templates
 
-You also have the ability to specify custom templates in your YAML header. We will discuss YAML headers in a later section. 
+You also have the ability to specify custom templates in your YAML header. We will discuss YAML headers in a later section ([Lesson 4: YAML Headers]). 
 
 I have only used this feature for Microsoft Word documents. I created a new document within Microsoft Word and selected all of the formatting options I wanted for my document. I then added the template to the YAML header of my R Markdown document to specify that when the document is knit (rendered) to apply the formatting specifications found in the template Microsoft Word document.
 
@@ -105,7 +105,7 @@ I have only used this feature for Microsoft Word documents. I created a new docu
 
 #### Presentations
 
-You have the ability to create presentation slides using R Markdown. Below are the different format options available. Exampes can be found in the following link under the "Presentation" section: https://rmarkdown.rstudio.com/gallery.html
+You have the ability to create presentation slides using R Markdown. Below are the different format options available. Examples can be found in the following link under the "Presentation" section: https://rmarkdown.rstudio.com/gallery.html
 
 * ioslides (HTML)
 * Slidy (HTML)
@@ -122,7 +122,7 @@ Shiny documents enable you to embed a shiny application into an R Markdown docum
 
 ## Your Turn
 
-1. Create a new HTML Rmd file.
+1. Create a new HTML .Rmd file.
 2. Save the document to your project root folder.
 3. Knit the default document produced by RStudio.
 4. Using the Knit drop-down menu, specify that you want to create a Word document.

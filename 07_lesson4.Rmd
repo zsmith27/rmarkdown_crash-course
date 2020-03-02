@@ -25,11 +25,11 @@ You can specify subtitle (`subtitle: "My Subtitle"`), which will appear below an
 
 ## Author(s)
 
-An author can be specified (`author: "Zachary M. Smith"`) and will appear at the head of the document but below the title(s). You can specify multiple authors by seperating the names of the authors by a comma (`author: "Zachary M. Smith, John Doe"`).
+An author can be specified (`author: "Zachary M. Smith"`) and will appear at the head of the document but below the title(s). You can specify multiple authors by separating the names of the authors by a comma (`author: "Zachary M. Smith, John Doe"`).
 
 ## Date
 
-You can supply a date (`date: "March 5th, 2020"`) that will be added to the head of the document. You can specify a static date (`date: "March 5th, 2020"`) or a dynamic date (see image below) that will update each time you knit (render) the document-- we will discuss this further in a subsequent section.
+You can supply a date (`date: "March 3rd, 2020"`) that will be added to the head of the document. You can specify a static date (`date: "March 3rd, 2020"`) or a dynamic date (see image below) that will update each time you knit (render) the document-- we will discuss this further in a subsequent section.
 
 <center>
 ![](images/rmarkdown/yaml_dynamic-date.png)

@@ -1,10 +1,10 @@
 ---
+title: "Parameterized Report Example: `r params$lake`"
 author: "Zachary M. Smith"
 date: "2/27/2020"
 output: html_document
-params:
+params: 
   lake: Onondaga
-title: "`r paste('Parameterized Report Example:', params$lake)`"
 ---
 
 ```{r global-options, echo=FALSE}

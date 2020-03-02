@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>13 Lesson 8: Bookdown | R Markdown Crash Course</title>
+  <meta name="description" content="13 Lesson 8: Bookdown | R Markdown Crash Course" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="13 Lesson 8: Bookdown | R Markdown Crash Course" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="13 Lesson 8: Bookdown | R Markdown Crash Course" />
+  
+  
+  
+
+<meta name="author" content="Zachary M. Smith" />
+
+
+<meta name="date" content="2020-03-02" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="lesson-7-parameterized-reports.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a></li>
+<li class="chapter" data-level="2" data-path="preparation-for-workshop.html"><a href="preparation-for-workshop.html"><i class="fa fa-check"></i><b>2</b> Preparation for Workshop</a><ul>
+<li class="chapter" data-level="2.1" data-path="preparation-for-workshop.html"><a href="preparation-for-workshop.html#install-r-and-r-studio"><i class="fa fa-check"></i><b>2.1</b> Install R and R Studio</a></li>
+<li class="chapter" data-level="2.2" data-path="preparation-for-workshop.html"><a href="preparation-for-workshop.html#updating-software-and-packages"><i class="fa fa-check"></i><b>2.2</b> Updating Software and Packages</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="preparation-for-workshop.html"><a href="preparation-for-workshop.html#r"><i class="fa fa-check"></i><b>2.2.1</b> R</a></li>
+<li class="chapter" data-level="2.2.2" data-path="preparation-for-workshop.html"><a href="preparation-for-workshop.html#r-studio"><i class="fa fa-check"></i><b>2.2.2</b> R Studio</a></li>
+<li class="chapter" data-level="2.2.3" data-path="preparation-for-workshop.html"><a href="preparation-for-workshop.html#r-packages"><i class="fa fa-check"></i><b>2.2.3</b> R-Packages</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="overview.html"><a href="overview.html"><i class="fa fa-check"></i><b>3</b> Overview</a><ul>
+<li class="chapter" data-level="3.1" data-path="overview.html"><a href="overview.html#agenda"><i class="fa fa-check"></i><b>3.1</b> Agenda</a></li>
+<li class="chapter" data-level="3.2" data-path="overview.html"><a href="overview.html#resources"><i class="fa fa-check"></i><b>3.2</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>4</b> Introduction</a><ul>
+<li class="chapter" data-level="4.1" data-path="introduction.html"><a href="introduction.html#benefits"><i class="fa fa-check"></i><b>4.1</b> Benefits</a></li>
+<li class="chapter" data-level="4.2" data-path="introduction.html"><a href="introduction.html#basic-overview"><i class="fa fa-check"></i><b>4.2</b> Basic Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="r-and-r-studio.html"><a href="r-and-r-studio.html"><i class="fa fa-check"></i><b>5</b> R and R Studio</a><ul>
+<li class="chapter" data-level="5.1" data-path="r-and-r-studio.html"><a href="r-and-r-studio.html#what-is-r"><i class="fa fa-check"></i><b>5.1</b> What is R?</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="r-and-r-studio.html"><a href="r-and-r-studio.html#benefits-of-using-r"><i class="fa fa-check"></i><b>5.1.1</b> Benefits of Using R</a></li>
+<li class="chapter" data-level="5.1.2" data-path="r-and-r-studio.html"><a href="r-and-r-studio.html#r-packages-1"><i class="fa fa-check"></i><b>5.1.2</b> R Packages</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="r-and-r-studio.html"><a href="r-and-r-studio.html#rstudio"><i class="fa fa-check"></i><b>5.2</b> RStudio</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="r-and-r-studio.html"><a href="r-and-r-studio.html#rstudio-overview"><i class="fa fa-check"></i><b>5.2.1</b> RStudio Overview</a></li>
+<li class="chapter" data-level="5.2.2" data-path="r-and-r-studio.html"><a href="r-and-r-studio.html#shortcuts"><i class="fa fa-check"></i><b>5.2.2</b> Shortcuts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="lesson-1-r-project-development.html"><a href="lesson-1-r-project-development.html"><i class="fa fa-check"></i><b>6</b> Lesson 1: R Project Development</a><ul>
+<li class="chapter" data-level="6.1" data-path="lesson-1-r-project-development.html"><a href="lesson-1-r-project-development.html#create-a-new-r-project"><i class="fa fa-check"></i><b>6.1</b> Create a New R Project</a></li>
+<li class="chapter" data-level="6.2" data-path="lesson-1-r-project-development.html"><a href="lesson-1-r-project-development.html#navigate-between-projects"><i class="fa fa-check"></i><b>6.2</b> Navigate Between Projects</a></li>
+<li class="chapter" data-level="6.3" data-path="lesson-1-r-project-development.html"><a href="lesson-1-r-project-development.html#recommended-workflow"><i class="fa fa-check"></i><b>6.3</b> Recommended Workflow</a></li>
+<li class="chapter" data-level="6.4" data-path="lesson-1-r-project-development.html"><a href="lesson-1-r-project-development.html#your-turn"><i class="fa fa-check"></i><b>6.4</b> Your Turn</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html"><i class="fa fa-check"></i><b>7</b> Lesson 2: Rmd Creation</a><ul>
+<li class="chapter" data-level="7.1" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#document-types"><i class="fa fa-check"></i><b>7.1</b> Document Types</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#html"><i class="fa fa-check"></i><b>7.1.1</b> HTML</a></li>
+<li class="chapter" data-level="7.1.2" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#pdf"><i class="fa fa-check"></i><b>7.1.2</b> PDF</a></li>
+<li class="chapter" data-level="7.1.3" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#word"><i class="fa fa-check"></i><b>7.1.3</b> Word</a></li>
+<li class="chapter" data-level="7.1.4" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#templates"><i class="fa fa-check"></i><b>7.1.4</b> Templates</a></li>
+<li class="chapter" data-level="7.1.5" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#other-types"><i class="fa fa-check"></i><b>7.1.5</b> Other Types</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#your-turn-1"><i class="fa fa-check"></i><b>7.2</b> Your Turn</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html"><i class="fa fa-check"></i><b>8</b> Lesson 3: Basic Syntax</a><ul>
+<li class="chapter" data-level="8.1" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#bold-and-italicized-text"><i class="fa fa-check"></i><b>8.1</b> <strong>Bold</strong> and <em>Italicized</em> Text</a></li>
+<li class="chapter" data-level="8.2" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#lists"><i class="fa fa-check"></i><b>8.2</b> Lists</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#unordered-lists"><i class="fa fa-check"></i><b>8.2.1</b> Unordered Lists</a></li>
+<li class="chapter" data-level="8.2.2" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#ordered-lists"><i class="fa fa-check"></i><b>8.2.2</b> Ordered Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#link-to-a-section"><i class="fa fa-check"></i><b>8.3</b> Link to a Section</a></li>
+<li class="chapter" data-level="8.4" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#hyperlink"><i class="fa fa-check"></i><b>8.4</b> Hyperlink</a></li>
+<li class="chapter" data-level="8.5" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#insert-images"><i class="fa fa-check"></i><b>8.5</b> Insert Images</a></li>
+<li class="chapter" data-level="8.6" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#tabbed-sections"><i class="fa fa-check"></i><b>8.6</b> Tabbed Sections</a></li>
+<li class="chapter" data-level="8.7" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#your-turn-2"><i class="fa fa-check"></i><b>8.7</b> Your Turn</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html"><i class="fa fa-check"></i><b>9</b> Lesson 4: YAML Headers</a><ul>
+<li class="chapter" data-level="9.1" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#title"><i class="fa fa-check"></i><b>9.1</b> Title</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#subtitle"><i class="fa fa-check"></i><b>9.1.1</b> Subtitle</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#authors"><i class="fa fa-check"></i><b>9.2</b> Author(s)</a></li>
+<li class="chapter" data-level="9.3" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#date"><i class="fa fa-check"></i><b>9.3</b> Date</a></li>
+<li class="chapter" data-level="9.4" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#table-of-contents-toc"><i class="fa fa-check"></i><b>9.4</b> Table of Contents (TOC)</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#floating-table-of-contents-toc"><i class="fa fa-check"></i><b>9.4.1</b> Floating Table of Contents (TOC)</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#themes"><i class="fa fa-check"></i><b>9.5</b> Themes</a></li>
+<li class="chapter" data-level="9.6" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#code-folding"><i class="fa fa-check"></i><b>9.6</b> Code Folding</a><ul>
+<li class="chapter" data-level="9.6.1" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#example-without-code-folding"><i class="fa fa-check"></i><b>9.6.1</b> Example without Code Folding</a></li>
+<li class="chapter" data-level="9.6.2" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#examples-with-code-folding"><i class="fa fa-check"></i><b>9.6.2</b> Examples with Code Folding</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#output"><i class="fa fa-check"></i><b>9.7</b> output</a></li>
+<li class="chapter" data-level="9.8" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#custom-template"><i class="fa fa-check"></i><b>9.8</b> Custom Template</a></li>
+<li class="chapter" data-level="9.9" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#ymlthis"><i class="fa fa-check"></i><b>9.9</b> ymlthis</a></li>
+<li class="chapter" data-level="9.10" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#your-turn-3"><i class="fa fa-check"></i><b>9.10</b> Your Turn</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html"><i class="fa fa-check"></i><b>10</b> Lesson 4: Code Chunks and Inline Code</a><ul>
+<li class="chapter" data-level="10.1" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#code-chunks"><i class="fa fa-check"></i><b>10.1</b> Code Chunks</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#shortcuts-1"><i class="fa fa-check"></i><b>10.1.1</b> Shortcuts</a></li>
+<li class="chapter" data-level="10.1.2" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#options"><i class="fa fa-check"></i><b>10.1.2</b> Options</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#inline-code"><i class="fa fa-check"></i><b>10.2</b> Inline Code</a></li>
+<li class="chapter" data-level="10.3" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#your-turn-part-1"><i class="fa fa-check"></i><b>10.3</b> Your Turn (Part 1)</a></li>
+<li class="chapter" data-level="10.4" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#interactive-features"><i class="fa fa-check"></i><b>10.4</b> Interactive Features</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#dt"><i class="fa fa-check"></i><b>10.4.1</b> DT</a></li>
+<li class="chapter" data-level="10.4.2" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#plotly"><i class="fa fa-check"></i><b>10.4.2</b> Plotly</a></li>
+<li class="chapter" data-level="10.4.3" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#leaflet"><i class="fa fa-check"></i><b>10.4.3</b> Leaflet</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="lesson-4-code-chunks-and-inline-code.html"><a href="lesson-4-code-chunks-and-inline-code.html#your-turn-part-2"><i class="fa fa-check"></i><b>10.5</b> Your Turn (Part 2)</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="lesson-6-child-documents.html"><a href="lesson-6-child-documents.html"><i class="fa fa-check"></i><b>11</b> Lesson 6: Child Documents</a><ul>
+<li class="chapter" data-level="11.1" data-path="lesson-6-child-documents.html"><a href="lesson-6-child-documents.html#extract-and-run-r-code-from-r-markdown-files"><i class="fa fa-check"></i><b>11.1</b> Extract and Run R-Code from R Markdown Files</a></li>
+<li class="chapter" data-level="11.2" data-path="lesson-6-child-documents.html"><a href="lesson-6-child-documents.html#your-turn-4"><i class="fa fa-check"></i><b>11.2</b> Your Turn</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="lesson-7-parameterized-reports.html"><a href="lesson-7-parameterized-reports.html"><i class="fa fa-check"></i><b>12</b> Lesson 7: Parameterized Reports</a><ul>
+<li class="chapter" data-level="12.1" data-path="lesson-7-parameterized-reports.html"><a href="lesson-7-parameterized-reports.html#params"><i class="fa fa-check"></i><b>12.1</b> params</a></li>
+<li class="chapter" data-level="12.2" data-path="lesson-7-parameterized-reports.html"><a href="lesson-7-parameterized-reports.html#knitting"><i class="fa fa-check"></i><b>12.2</b> Knitting</a></li>
+<li class="chapter" data-level="12.3" data-path="lesson-7-parameterized-reports.html"><a href="lesson-7-parameterized-reports.html#rmarkdownrender"><i class="fa fa-check"></i><b>12.3</b> rmarkdown::render()</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="lesson-8-bookdown.html"><a href="lesson-8-bookdown.html"><i class="fa fa-check"></i><b>13</b> Lesson 8: Bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Markdown Crash Course</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lesson-8-bookdown" class="section level1">
+<h1><span class="header-section-number">13</span> Lesson 8: Bookdown</h1>
+<center>
+<img src="images/hex_symbols/bookdown.png" width="150" />
+</center>
+<p>The <strong>bookdown</strong> package provides tools for creating books and ebooks. This document was created with <strong>bookdown</strong>.</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lesson-7-parameterized-reports.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

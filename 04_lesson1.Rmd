@@ -7,7 +7,7 @@ output: html_document
 
 # Lesson 1: R Project Development
 
-__Overview__
+## Overview
 
 * Easier to access files (relative path)
     + Relative paths help prevent broken paths
@@ -20,7 +20,7 @@ __Overview__
 
 1. Create a new R project by clicking on the drop-down menu at the top right of RStudio and selecting "New Project"
 
-![](images/r_project/create_project.png)
+![](images/r_project/create_project.png){width=1000px}
 
 2. Select "New Directory" within the "Create Project" window
 
@@ -63,7 +63,7 @@ Quickly navigate between recently opened R projects by clicking on the drop-down
 3. Add an "data" folder and add the example data set to this folder.
 4. Create a new R Script (Ctrl + Shift + N) and save the script as "lesson_1.R" to your project root folder.
 5. Add the following script and run it (Ctrl + Enter)
-    + Notice that the entire file path to CSV of interest ("zms_thesis_metrics.csv") was not specified just 
+    + Notice that the entire file path to CSV of interest ("zms_thesis_metrics.csv") was not specified just `file.path("data", "zms_thesis_metrics.csv")`.
 ```{r, eval=FALSE}
 thesis.df <- read.csv(file.path("data",
                                 "zms_thesis_metrics.csv"),
@@ -72,9 +72,9 @@ thesis.df <- read.csv(file.path("data",
 head(thesis.df)
 ```
 6. View `thesis.df` in the Environment panel
-    + How many rows and columns does our dataframe have?
+    + How many rows and columns does our data frame have?
     + Click on the drop-down menu (the blue circle to the left of `thesis.df`). 
         + Can you identify the column type (e.g., Character, Numeric, Integer, or Factor) of the columns `unique_id`, `substrate_size_d50`, `richness`, and `pct_diptera`?
-        + What are the first, second, and third `unique_id`'s represented in the dataframe and which `richness` values are associated with each `unique_id`?
-    + Click on the button to view the data (the small grided table to the far-right of `thesis.df`)
-        + Filter the dataframe to only see data from Onondaga Lake (`lake` = "onon")
+        + What are the first, second, and third `unique_id`'s represented in the data frame and which `richness` values are associated with each `unique_id`?
+    + Click on the button to view the data (the small girdded table to the far-right of `thesis.df`)
+        + Filter the data frame to only see data from Onondaga Lake (`lake` = "onon")

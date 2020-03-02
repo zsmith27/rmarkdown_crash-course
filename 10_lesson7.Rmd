@@ -15,7 +15,7 @@ Here is a link to a great lecture on creating parameterized reports: https://www
 
 ## params
 
-To add a parameter or parameters to your document, add the `params:` argument below `output: html_document`. Below `params:` you can specify any parameter name you want to use and any default value you want to supply. In this example I will be using the `iris` dataset, and therefore I specified that the name of my parameter would be "species" and the default value would be "setosa."
+To add a parameter or parameters to your document, add the `params:` argument below `output: html_document`. Below `params:` you can specify any parameter name you want to use and any default value you want to supply. In this example I will be using the `iris` data set, and therefore I specified that the name of my parameter would be "species" and the default value would be "setosa."
 
 <center>
 ![](images/rmarkdown/param_yaml.png)
@@ -30,7 +30,7 @@ In the example below, I use inline code to insert the species name into the titl
 ![](images/rmarkdown/param_yaml_dynamic_title.png)
 </center>
 
-The parmeters can also be used to filter the original data frame to a subset of interst. For example, the iris dataframe can be filtered to only include the specified species of interest using the code below.
+The parameters can also be used to filter the original data frame to a subset of interest. For example, the iris data frame can be filtered to only include the specified species of interest using the code below.
 ```{r, eval=FALSE}
 data(iris)
 
@@ -45,7 +45,7 @@ The parameter can be referenced frequently to update the text in the document or
 
 ## Knitting
 
-To the knit the document, click on the knit drop-down menu (the small triangle to the right of the Knit button) and select "Knit with Parmeters..." A pop-up window will appear specifying the list of available parameters and their default values. These default values can be edited prior to clicking "knit" at the bottom right of the window.
+To the knit the document, click on the knit drop-down menu (the small triangle to the right of the Knit button) and select "Knit with Parameters..." A pop-up window will appear specifying the list of available parameters and their default values. These default values can be edited prior to clicking "knit" at the bottom right of the window.
 
 <center>
 ![](images/rmarkdown/params_knit-with-parameters.png)
@@ -54,18 +54,18 @@ To the knit the document, click on the knit drop-down menu (the small triangle t
 The document will then render.
 
 <center>
-![](images/rmarkdown/param_rendered-example.png)
+![](images/rmarkdown/param_rendered-example.png){width=600px}
 </center>
 
 ## rmarkdown::render()
 
-The __rmarkdown__ function `render()` can also be used to compile the document. The `input` specifies the parameterized .Rmd file. The `params` arguement species the parameter values to be used when rendering the document. Note that the value supplied to `params` must be wrapped by `list()`. 
+The __rmarkdown__ function `render()` can also be used to compile the document. The `input` specifies the parameterized .Rmd file. The `params` argument species the parameter values to be used when rendering the document. Note that the value supplied to `params` must be wrapped by `list()`. 
 ```{r, eval=FALSE}
 rmarkdown::render(input = "parameterized/param_template.Rmd",
                   params = list(species = "setosa"))
 ```
 
-It would not be effecient to specify each parameter of interest one-by-one. Instead a loop can be written to iteratively generate parameterized documents. Below the function `lapply()` is used to create the loop. `unique(iris$Species)` supplies a vector of unique species names (i.e., "setosa", "versicolor", and "virginica") to generate parmeterized reports. `species.i` is specified as a placeholder to represent each unique species in the iris dataset; therefore `species.i` is used to specify what the species parameter should equal and it is used to generate a unique and easy to interprete file name `output_file = paste0(species.i, ".HTML")`.
+It would not be efficient to specify each parameter of interest one-by-one. Instead a loop can be written to iteratively generate parameterized documents. Below the function `lapply()` is used to create the loop. `unique(iris$Species)` supplies a vector of unique species names (i.e., "setosa", "versicolor", and "virginica") to generate parameterized reports. `species.i` is specified as a placeholder to represent each unique species in the iris data set; therefore `species.i` is used to specify what the species parameter should equal and it is used to generate a unique and easy to interpret file name `output_file = paste0(species.i, ".HTML")`.
 ```{r, eval=FALSE}
 lapply(unique(iris$Species), function(species.i) {
   rmarkdown::render("parameterized/param_template.Rmd",
@@ -74,3 +74,22 @@ lapply(unique(iris$Species), function(species.i) {
 })
 ```
 
+## Your Turn
+
+1. Create a new .Rmd file and copy/paste the content of the .Rmd file created in [Lesson 5: Code Chunks and Inline Code]
+2. add `params:` and  specify lake as a parameter with Onondaga as the default (`lake: Onondaga`) to the YAML header
+2. Use inline code to have the YAML title update to include the specified parameter (`params$lake`)
+3. In your introductory paragraph, use inline code to specify that this document is specific to X Lake.
+4. Filter `thesis.df` to only represent the specified lake parameter 
+```{r filter-lake_example, eval=FALSE}
+thesis.df <- thesis.df %>% 
+  filter(lake %in% params$lake)
+```
+5. Update your conclusion section text to specify that the results are from X Lake and use inline code to specify:
+    + the minimum relative abundance of Diptera taxa `min(thesis.df$pct_diptera)`
+    + the maximum relative abundance of Diptera taxa `max(thesis.df$pct_diptera)`
+    + the median richness value observed in the lake `median(thesis.df$richness)`
+6. Render the document using the "Knit with Parameters..." button
+   + Use the default parameter
+   + Specify a different parameter (e.g., lake = Cazenovia)
+7. __Bonus:__ Try to write a loop with `lapply()` and `render()` to automate the process to generate a report for each of the three lakes in the data set.

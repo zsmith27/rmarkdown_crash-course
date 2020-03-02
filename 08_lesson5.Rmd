@@ -7,24 +7,26 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Lesson 4: Code Chunks and Inline Code
+# Lesson 5: Code Chunks and Inline Code
 
-Up to this point in the workshop we have mostly just written a standard markdown document. However, we want to integrate R code into our document to create reproducible objects, such as figures, tables, and text. This integration will make will make it easier to reproduce the document.
+Up to this point in the workshop we have mostly just written a standard markdown document. However, we want to integrate R code into our document to create reproducible objects, such as figures, tables, and text. 
 
 ## Code Chunks
 
-To insert a code chunk, press __Ctrl + Alt + i__ in the source pane (top left pane in the default settings of Studio). A code chunk will appear: ![](images/rmarkdown/code_chunk.png)
+To insert a code chunk, press __Ctrl + Alt + I__ in the source pane (top left pane in the default settings of RStudio). A code chunk will appear: ![](images/rmarkdown/code_chunk.png)
 
 Inside the code chunk you can write and run R-code. If you print the output of your R-code it will appear below the code chunk in the source pane and the printed output will appear in the final compiled document. This is useful for producing figures and tables.
 
 ![](images/rmarkdown/example_chunk_ouptut.png)
 
 * On the far right of the code chunk you will see three buttons. 
-    + The cog makes it easy to specify code chunk options-- discused below.
-    + The middle button will exectute all code chunks prior to a given function (`Ctrl + Alt + P`)
+    + The cog makes it easy to specify code chunk options-- discussed below.
+    + The middle button will execute all code chunks prior to a given function (`Ctrl + Alt + P`)
     + The far right button will execute all of the code in a code chunk.
     
+<center>
 ![](images/rmarkdown/code-chunk_tools.png)
+</center>
 
 ### Shortcuts
 
@@ -115,7 +117,9 @@ __Which would render to:__ The mean sepal length found in the _iris_ data set is
 
 I frequently use inline code to make my YAML header date update to the date the document was last rendered.
 
+<center>
 ![](images/rmarkdown/inline_yaml-date.png)
+</center>
 
 You can reformat the date using the `format()` function, as depicted in the image below.
 ![](images/rmarkdown/inline_yaml-date-format.png)
@@ -179,6 +183,11 @@ ggplot(thesis.df, aes(lake, richness, fill = lake)) +
   geom_boxplot()
 ```
 9. Add a brief interpretation of the figures into the "Conclusions" section.
+10. __Bonus:__ Try using the cog at the top right of the code chunk to update a code chunks options.
+
+<center>
+![](images/rmarkdown/code-chunk_tools.png)
+</center>
         
 ## Interactive Features
 
@@ -242,7 +251,7 @@ leaflet(data = quakes,
              )
 ```
 
-Another neat feature is the ability to cluster points to better vizualize density. You can do this by setting `clusterOptions = markerClusterOptions()`.
+Another neat feature is the ability to cluster points to better visualize density. You can do this by setting `clusterOptions = markerClusterOptions()`.
 ```{r}
 library(leaflet)
 
