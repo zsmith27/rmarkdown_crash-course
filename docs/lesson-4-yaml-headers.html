@@ -4,19 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>9 Lesson 4: YAML Headers | R Markdown Crash Course</title>
-  <meta name="description" content="9 Lesson 4: YAML Headers | R Markdown Crash Course" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <title>9 Lesson 4: YAML Headers | Untitled</title>
+  <meta name="description" content="9 Lesson 4: YAML Headers | Untitled" />
+  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="9 Lesson 4: YAML Headers | R Markdown Crash Course" />
+  <meta property="og:title" content="9 Lesson 4: YAML Headers | Untitled" />
   <meta property="og:type" content="book" />
-  
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="9 Lesson 4: YAML Headers | R Markdown Crash Course" />
+  <meta name="twitter:title" content="9 Lesson 4: YAML Headers | Untitled" />
   
   
   
@@ -24,7 +23,6 @@
 <meta name="author" content="Zachary M. Smith" />
 
 
-<meta name="date" content="2020-03-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +31,8 @@
   
 <link rel="prev" href="lesson-3-basic-syntax.html"/>
 <link rel="next" href="lesson-5-code-chunks-and-inline-code.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,26 +48,29 @@
 
 
 
-
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.12/datatables.js"></script>
-<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
-<script src="libs/plotly-binding-4.9.2/plotly.js"></script>
+<script src="libs/datatables-binding-0.34.0/datatables.js"></script>
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+<script src="libs/plotly-binding-4.11.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.2.3/leaflet.js"></script>
 <link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet" />
 <link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.Default.css" rel="stylesheet" />
 <script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.js"></script>
@@ -77,25 +79,27 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -104,15 +108,15 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -125,7 +129,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -137,6 +141,11 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
 
 </head>
@@ -152,44 +161,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a></li>
-<li class="chapter" data-level="2" data-path="preparation-for-workshop.html"><a href="preparation-for-workshop.html"><i class="fa fa-check"></i><b>2</b> Preparation for Workshop</a><ul>
+<li class="chapter" data-level="2" data-path="preparation-for-workshop.html"><a href="preparation-for-workshop.html"><i class="fa fa-check"></i><b>2</b> Preparation for Workshop</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="preparation-for-workshop.html"><a href="preparation-for-workshop.html#install-r-and-r-studio"><i class="fa fa-check"></i><b>2.1</b> Install R and R Studio</a></li>
-<li class="chapter" data-level="2.2" data-path="preparation-for-workshop.html"><a href="preparation-for-workshop.html#updating-software-and-packages"><i class="fa fa-check"></i><b>2.2</b> Updating Software and Packages</a><ul>
+<li class="chapter" data-level="2.2" data-path="preparation-for-workshop.html"><a href="preparation-for-workshop.html#updating-software-and-packages"><i class="fa fa-check"></i><b>2.2</b> Updating Software and Packages</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="preparation-for-workshop.html"><a href="preparation-for-workshop.html#r"><i class="fa fa-check"></i><b>2.2.1</b> R</a></li>
 <li class="chapter" data-level="2.2.2" data-path="preparation-for-workshop.html"><a href="preparation-for-workshop.html#r-studio"><i class="fa fa-check"></i><b>2.2.2</b> R Studio</a></li>
 <li class="chapter" data-level="2.2.3" data-path="preparation-for-workshop.html"><a href="preparation-for-workshop.html#r-packages"><i class="fa fa-check"></i><b>2.2.3</b> R-Packages</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="overview.html"><a href="overview.html"><i class="fa fa-check"></i><b>3</b> Overview</a><ul>
+<li class="chapter" data-level="3" data-path="overview.html"><a href="overview.html"><i class="fa fa-check"></i><b>3</b> Overview</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="overview.html"><a href="overview.html#agenda"><i class="fa fa-check"></i><b>3.1</b> Agenda</a></li>
 <li class="chapter" data-level="3.2" data-path="overview.html"><a href="overview.html#resources"><i class="fa fa-check"></i><b>3.2</b> Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>4</b> Introduction</a><ul>
+<li class="chapter" data-level="4" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>4</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="introduction.html"><a href="introduction.html#benefits"><i class="fa fa-check"></i><b>4.1</b> Benefits</a></li>
 <li class="chapter" data-level="4.2" data-path="introduction.html"><a href="introduction.html#basic-overview"><i class="fa fa-check"></i><b>4.2</b> Basic Overview</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="r-and-r-studio.html"><a href="r-and-r-studio.html"><i class="fa fa-check"></i><b>5</b> R and R Studio</a><ul>
-<li class="chapter" data-level="5.1" data-path="r-and-r-studio.html"><a href="r-and-r-studio.html#what-is-r"><i class="fa fa-check"></i><b>5.1</b> What is R?</a><ul>
+<li class="chapter" data-level="5" data-path="r-and-r-studio.html"><a href="r-and-r-studio.html"><i class="fa fa-check"></i><b>5</b> R and R Studio</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="r-and-r-studio.html"><a href="r-and-r-studio.html#what-is-r"><i class="fa fa-check"></i><b>5.1</b> What is R?</a>
+<ul>
 <li class="chapter" data-level="5.1.1" data-path="r-and-r-studio.html"><a href="r-and-r-studio.html#benefits-of-using-r"><i class="fa fa-check"></i><b>5.1.1</b> Benefits of Using R</a></li>
 <li class="chapter" data-level="5.1.2" data-path="r-and-r-studio.html"><a href="r-and-r-studio.html#r-packages-1"><i class="fa fa-check"></i><b>5.1.2</b> R Packages</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="r-and-r-studio.html"><a href="r-and-r-studio.html#rstudio"><i class="fa fa-check"></i><b>5.2</b> RStudio</a><ul>
+<li class="chapter" data-level="5.2" data-path="r-and-r-studio.html"><a href="r-and-r-studio.html#rstudio"><i class="fa fa-check"></i><b>5.2</b> RStudio</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="r-and-r-studio.html"><a href="r-and-r-studio.html#create-a-new-script"><i class="fa fa-check"></i><b>5.2.1</b> Create a New Script</a></li>
 <li class="chapter" data-level="5.2.2" data-path="r-and-r-studio.html"><a href="r-and-r-studio.html#rstudio-overview"><i class="fa fa-check"></i><b>5.2.2</b> RStudio Overview</a></li>
 <li class="chapter" data-level="5.2.3" data-path="r-and-r-studio.html"><a href="r-and-r-studio.html#shortcuts"><i class="fa fa-check"></i><b>5.2.3</b> Shortcuts</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="lesson-1-r-project-development.html"><a href="lesson-1-r-project-development.html"><i class="fa fa-check"></i><b>6</b> Lesson 1: R Project Development</a><ul>
+<li class="chapter" data-level="6" data-path="lesson-1-r-project-development.html"><a href="lesson-1-r-project-development.html"><i class="fa fa-check"></i><b>6</b> Lesson 1: R Project Development</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="lesson-1-r-project-development.html"><a href="lesson-1-r-project-development.html#overview-1"><i class="fa fa-check"></i><b>6.1</b> Overview</a></li>
 <li class="chapter" data-level="6.2" data-path="lesson-1-r-project-development.html"><a href="lesson-1-r-project-development.html#create-a-new-r-project"><i class="fa fa-check"></i><b>6.2</b> Create a New R Project</a></li>
 <li class="chapter" data-level="6.3" data-path="lesson-1-r-project-development.html"><a href="lesson-1-r-project-development.html#navigate-between-projects"><i class="fa fa-check"></i><b>6.3</b> Navigate Between Projects</a></li>
 <li class="chapter" data-level="6.4" data-path="lesson-1-r-project-development.html"><a href="lesson-1-r-project-development.html#recommended-workflow"><i class="fa fa-check"></i><b>6.4</b> Recommended Workflow</a></li>
 <li class="chapter" data-level="6.5" data-path="lesson-1-r-project-development.html"><a href="lesson-1-r-project-development.html#your-turn"><i class="fa fa-check"></i><b>6.5</b> Your Turn</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html"><i class="fa fa-check"></i><b>7</b> Lesson 2: Rmd Creation</a><ul>
+<li class="chapter" data-level="7" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html"><i class="fa fa-check"></i><b>7</b> Lesson 2: Rmd Creation</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#create-a-new-document"><i class="fa fa-check"></i><b>7.1</b> Create a New Document</a></li>
 <li class="chapter" data-level="7.2" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#compile-the-document"><i class="fa fa-check"></i><b>7.2</b> Compile the Document</a></li>
-<li class="chapter" data-level="7.3" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#document-types"><i class="fa fa-check"></i><b>7.3</b> Document Types</a><ul>
+<li class="chapter" data-level="7.3" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#document-types"><i class="fa fa-check"></i><b>7.3</b> Document Types</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#html"><i class="fa fa-check"></i><b>7.3.1</b> HTML</a></li>
 <li class="chapter" data-level="7.3.2" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#pdf"><i class="fa fa-check"></i><b>7.3.2</b> PDF</a></li>
 <li class="chapter" data-level="7.3.3" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#word"><i class="fa fa-check"></i><b>7.3.3</b> Word</a></li>
@@ -198,11 +217,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="lesson-2-rmd-creation.html"><a href="lesson-2-rmd-creation.html#your-turn-1"><i class="fa fa-check"></i><b>7.4</b> Your Turn</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html"><i class="fa fa-check"></i><b>8</b> Lesson 3: Basic Syntax</a><ul>
+<li class="chapter" data-level="8" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html"><i class="fa fa-check"></i><b>8</b> Lesson 3: Basic Syntax</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#heading-text"><i class="fa fa-check"></i><b>8.1</b> Heading Text</a></li>
 <li class="chapter" data-level="8.2" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#plain-text"><i class="fa fa-check"></i><b>8.2</b> Plain Text</a></li>
 <li class="chapter" data-level="8.3" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#bold-and-italicized-text"><i class="fa fa-check"></i><b>8.3</b> <strong>Bold</strong> and <em>Italicized</em> Text</a></li>
-<li class="chapter" data-level="8.4" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#lists"><i class="fa fa-check"></i><b>8.4</b> Lists</a><ul>
+<li class="chapter" data-level="8.4" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#lists"><i class="fa fa-check"></i><b>8.4</b> Lists</a>
+<ul>
 <li class="chapter" data-level="8.4.1" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#unordered-lists"><i class="fa fa-check"></i><b>8.4.1</b> Unordered Lists</a></li>
 <li class="chapter" data-level="8.4.2" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#ordered-lists"><i class="fa fa-check"></i><b>8.4.2</b> Ordered Lists</a></li>
 </ul></li>
@@ -212,17 +233,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.8" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#tabbed-sections"><i class="fa fa-check"></i><b>8.8</b> Tabbed Sections</a></li>
 <li class="chapter" data-level="8.9" data-path="lesson-3-basic-syntax.html"><a href="lesson-3-basic-syntax.html#your-turn-2"><i class="fa fa-check"></i><b>8.9</b> Your Turn</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html"><i class="fa fa-check"></i><b>9</b> Lesson 4: YAML Headers</a><ul>
-<li class="chapter" data-level="9.1" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#title"><i class="fa fa-check"></i><b>9.1</b> Title</a><ul>
+<li class="chapter" data-level="9" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html"><i class="fa fa-check"></i><b>9</b> Lesson 4: YAML Headers</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#title"><i class="fa fa-check"></i><b>9.1</b> Title</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#subtitle"><i class="fa fa-check"></i><b>9.1.1</b> Subtitle</a></li>
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#authors"><i class="fa fa-check"></i><b>9.2</b> Author(s)</a></li>
 <li class="chapter" data-level="9.3" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#date"><i class="fa fa-check"></i><b>9.3</b> Date</a></li>
-<li class="chapter" data-level="9.4" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#table-of-contents-toc"><i class="fa fa-check"></i><b>9.4</b> Table of Contents (TOC)</a><ul>
+<li class="chapter" data-level="9.4" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#table-of-contents-toc"><i class="fa fa-check"></i><b>9.4</b> Table of Contents (TOC)</a>
+<ul>
 <li class="chapter" data-level="9.4.1" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#floating-table-of-contents-toc"><i class="fa fa-check"></i><b>9.4.1</b> Floating Table of Contents (TOC)</a></li>
 </ul></li>
 <li class="chapter" data-level="9.5" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#themes"><i class="fa fa-check"></i><b>9.5</b> Themes</a></li>
-<li class="chapter" data-level="9.6" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#code-folding"><i class="fa fa-check"></i><b>9.6</b> Code Folding</a><ul>
+<li class="chapter" data-level="9.6" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#code-folding"><i class="fa fa-check"></i><b>9.6</b> Code Folding</a>
+<ul>
 <li class="chapter" data-level="9.6.1" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#example-without-code-folding"><i class="fa fa-check"></i><b>9.6.1</b> Example without Code Folding</a></li>
 <li class="chapter" data-level="9.6.2" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#examples-with-code-folding"><i class="fa fa-check"></i><b>9.6.2</b> Examples with Code Folding</a></li>
 </ul></li>
@@ -231,31 +256,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.9" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#ymlthis"><i class="fa fa-check"></i><b>9.9</b> ymlthis</a></li>
 <li class="chapter" data-level="9.10" data-path="lesson-4-yaml-headers.html"><a href="lesson-4-yaml-headers.html#your-turn-3"><i class="fa fa-check"></i><b>9.10</b> Your Turn</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="lesson-5-code-chunks-and-inline-code.html"><a href="lesson-5-code-chunks-and-inline-code.html"><i class="fa fa-check"></i><b>10</b> Lesson 5: Code Chunks and Inline Code</a><ul>
-<li class="chapter" data-level="10.1" data-path="lesson-5-code-chunks-and-inline-code.html"><a href="lesson-5-code-chunks-and-inline-code.html#code-chunks"><i class="fa fa-check"></i><b>10.1</b> Code Chunks</a><ul>
+<li class="chapter" data-level="10" data-path="lesson-5-code-chunks-and-inline-code.html"><a href="lesson-5-code-chunks-and-inline-code.html"><i class="fa fa-check"></i><b>10</b> Lesson 5: Code Chunks and Inline Code</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="lesson-5-code-chunks-and-inline-code.html"><a href="lesson-5-code-chunks-and-inline-code.html#code-chunks"><i class="fa fa-check"></i><b>10.1</b> Code Chunks</a>
+<ul>
 <li class="chapter" data-level="10.1.1" data-path="lesson-5-code-chunks-and-inline-code.html"><a href="lesson-5-code-chunks-and-inline-code.html#shortcuts-1"><i class="fa fa-check"></i><b>10.1.1</b> Shortcuts</a></li>
 <li class="chapter" data-level="10.1.2" data-path="lesson-5-code-chunks-and-inline-code.html"><a href="lesson-5-code-chunks-and-inline-code.html#options"><i class="fa fa-check"></i><b>10.1.2</b> Options</a></li>
 </ul></li>
 <li class="chapter" data-level="10.2" data-path="lesson-5-code-chunks-and-inline-code.html"><a href="lesson-5-code-chunks-and-inline-code.html#inline-code"><i class="fa fa-check"></i><b>10.2</b> Inline Code</a></li>
 <li class="chapter" data-level="10.3" data-path="lesson-5-code-chunks-and-inline-code.html"><a href="lesson-5-code-chunks-and-inline-code.html#your-turn-part-1"><i class="fa fa-check"></i><b>10.3</b> Your Turn (Part 1)</a></li>
-<li class="chapter" data-level="10.4" data-path="lesson-5-code-chunks-and-inline-code.html"><a href="lesson-5-code-chunks-and-inline-code.html#interactive-features"><i class="fa fa-check"></i><b>10.4</b> Interactive Features</a><ul>
+<li class="chapter" data-level="10.4" data-path="lesson-5-code-chunks-and-inline-code.html"><a href="lesson-5-code-chunks-and-inline-code.html#interactive-features"><i class="fa fa-check"></i><b>10.4</b> Interactive Features</a>
+<ul>
 <li class="chapter" data-level="10.4.1" data-path="lesson-5-code-chunks-and-inline-code.html"><a href="lesson-5-code-chunks-and-inline-code.html#dt"><i class="fa fa-check"></i><b>10.4.1</b> DT</a></li>
 <li class="chapter" data-level="10.4.2" data-path="lesson-5-code-chunks-and-inline-code.html"><a href="lesson-5-code-chunks-and-inline-code.html#plotly"><i class="fa fa-check"></i><b>10.4.2</b> Plotly</a></li>
 <li class="chapter" data-level="10.4.3" data-path="lesson-5-code-chunks-and-inline-code.html"><a href="lesson-5-code-chunks-and-inline-code.html#leaflet"><i class="fa fa-check"></i><b>10.4.3</b> Leaflet</a></li>
 </ul></li>
 <li class="chapter" data-level="10.5" data-path="lesson-5-code-chunks-and-inline-code.html"><a href="lesson-5-code-chunks-and-inline-code.html#your-turn-part-2"><i class="fa fa-check"></i><b>10.5</b> Your Turn (Part 2)</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="lesson-6-child-documents.html"><a href="lesson-6-child-documents.html"><i class="fa fa-check"></i><b>11</b> Lesson 6: Child Documents</a><ul>
-<li class="chapter" data-level="11.1" data-path="lesson-6-child-documents.html"><a href="lesson-6-child-documents.html#extract-and-run-r-code-from-r-markdown-files"><i class="fa fa-check"></i><b>11.1</b> Extract and Run R-Code from R Markdown Files</a><ul>
+<li class="chapter" data-level="11" data-path="lesson-6-child-documents.html"><a href="lesson-6-child-documents.html"><i class="fa fa-check"></i><b>11</b> Lesson 6: Child Documents</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="lesson-6-child-documents.html"><a href="lesson-6-child-documents.html#extract-and-run-r-code-from-r-markdown-files"><i class="fa fa-check"></i><b>11.1</b> Extract and Run R-Code from R Markdown Files</a>
+<ul>
 <li class="chapter" data-level="11.1.1" data-path="lesson-6-child-documents.html"><a href="lesson-6-child-documents.html#r-code"><i class="fa fa-check"></i><b>11.1.1</b> R Code</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="lesson-6-child-documents.html"><a href="lesson-6-child-documents.html#your-turn-4"><i class="fa fa-check"></i><b>11.2</b> Your Turn</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="lesson-7-parameterized-reports.html"><a href="lesson-7-parameterized-reports.html"><i class="fa fa-check"></i><b>12</b> Lesson 7: Parameterized Reports</a><ul>
+<li class="chapter" data-level="12" data-path="lesson-7-parameterized-reports.html"><a href="lesson-7-parameterized-reports.html"><i class="fa fa-check"></i><b>12</b> Lesson 7: Parameterized Reports</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="lesson-7-parameterized-reports.html"><a href="lesson-7-parameterized-reports.html#params"><i class="fa fa-check"></i><b>12.1</b> params</a></li>
 <li class="chapter" data-level="12.2" data-path="lesson-7-parameterized-reports.html"><a href="lesson-7-parameterized-reports.html#knitting"><i class="fa fa-check"></i><b>12.2</b> Knitting</a></li>
 <li class="chapter" data-level="12.3" data-path="lesson-7-parameterized-reports.html"><a href="lesson-7-parameterized-reports.html#rmarkdownrender"><i class="fa fa-check"></i><b>12.3</b> rmarkdown::render()</a></li>
 <li class="chapter" data-level="12.4" data-path="lesson-7-parameterized-reports.html"><a href="lesson-7-parameterized-reports.html#your-turn-5"><i class="fa fa-check"></i><b>12.4</b> Your Turn</a></li>
+<li class="chapter" data-level="12.5" data-path="lesson-7-parameterized-reports.html"><a href="lesson-7-parameterized-reports.html#r-markdown"><i class="fa fa-check"></i><b>12.5</b> R Markdown</a></li>
+<li class="chapter" data-level="12.6" data-path="lesson-7-parameterized-reports.html"><a href="lesson-7-parameterized-reports.html#including-plots"><i class="fa fa-check"></i><b>12.6</b> Including Plots</a></li>
 </ul></li>
 </ul>
 
@@ -266,7 +299,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Markdown Crash Course</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Untitled</a>
           </h1>
         </div>
 
@@ -274,79 +307,79 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lesson-4-yaml-headers" class="section level1">
-<h1><span class="header-section-number">9</span> Lesson 4: YAML Headers</h1>
+<div id="lesson-4-yaml-headers" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">9</span> Lesson 4: YAML Headers<a href="lesson-4-yaml-headers.html#lesson-4-yaml-headers" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><strong>YAML:</strong> YAML Ain’t Markup Language</p>
 <p>A YAML header contains YAML arguments, such as “title”, “author”, and “output”, demarcated by three dashes (—) on either end.</p>
 <center>
 <img src="images/rmarkdown/yaml_1.png" />
 </center>
-<div id="title" class="section level2">
-<h2><span class="header-section-number">9.1</span> Title</h2>
+<div id="title" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Title<a href="lesson-4-yaml-headers.html#title" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The specified title (<code>title: "My Title"</code>) will appear at the head of the document with a larger font size than the rest of the document.</p>
-<div id="subtitle" class="section level3">
-<h3><span class="header-section-number">9.1.1</span> Subtitle</h3>
+<div id="subtitle" class="section level3 hasAnchor" number="9.1.1">
+<h3><span class="header-section-number">9.1.1</span> Subtitle<a href="lesson-4-yaml-headers.html#subtitle" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You can specify subtitle (<code>subtitle: "My Subtitle"</code>), which will appear below and in slightly smaller font size than the title of the document.</p>
 </div>
 </div>
-<div id="authors" class="section level2">
-<h2><span class="header-section-number">9.2</span> Author(s)</h2>
+<div id="authors" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Author(s)<a href="lesson-4-yaml-headers.html#authors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>An author can be specified (<code>author: "Zachary M. Smith"</code>) and will appear at the head of the document but below the title(s). You can specify multiple authors by separating the names of the authors by a comma (<code>author: "Zachary M. Smith, John Doe"</code>).</p>
 </div>
-<div id="date" class="section level2">
-<h2><span class="header-section-number">9.3</span> Date</h2>
+<div id="date" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Date<a href="lesson-4-yaml-headers.html#date" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You can supply a date (<code>date: "March 3rd, 2020"</code>) that will be added to the head of the document. You can specify a static date (<code>date: "March 3rd, 2020"</code>) or a dynamic date (see image below) that will update each time you knit (render) the document– we will discuss this further in a subsequent section.</p>
 <center>
 <img src="images/rmarkdown/yaml_dynamic-date.png" />
 </center>
 </div>
-<div id="table-of-contents-toc" class="section level2">
-<h2><span class="header-section-number">9.4</span> Table of Contents (TOC)</h2>
+<div id="table-of-contents-toc" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Table of Contents (TOC)<a href="lesson-4-yaml-headers.html#table-of-contents-toc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <center>
 <img src="images/rmarkdown/yaml_2.png" />
 </center>
-<div id="floating-table-of-contents-toc" class="section level3">
-<h3><span class="header-section-number">9.4.1</span> Floating Table of Contents (TOC)</h3>
+<div id="floating-table-of-contents-toc" class="section level3 hasAnchor" number="9.4.1">
+<h3><span class="header-section-number">9.4.1</span> Floating Table of Contents (TOC)<a href="lesson-4-yaml-headers.html#floating-table-of-contents-toc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <center>
 <img src="images/rmarkdown/yaml_3.png" />
 </center>
 </div>
 </div>
-<div id="themes" class="section level2">
-<h2><span class="header-section-number">9.5</span> Themes</h2>
+<div id="themes" class="section level2 hasAnchor" number="9.5">
+<h2><span class="header-section-number">9.5</span> Themes<a href="lesson-4-yaml-headers.html#themes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You can modify the YAML to specify the .theme of the document, which will change document styling (e.g., font type, color, size)</p>
 <p>The following link provides examples of some of the available R Markdown themes: <a href="https://www.datadreaming.org/post/r-markdown-theme-gallery/" class="uri">https://www.datadreaming.org/post/r-markdown-theme-gallery/</a></p>
 <center>
 <img src="images/rmarkdown/yaml_4.png" />
 </center>
 </div>
-<div id="code-folding" class="section level2">
-<h2><span class="header-section-number">9.6</span> Code Folding</h2>
+<div id="code-folding" class="section level2 hasAnchor" number="9.6">
+<h2><span class="header-section-number">9.6</span> Code Folding<a href="lesson-4-yaml-headers.html#code-folding" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Code folding refers to the HTML YAML option to hide code chunks by default, but enable the reader to click a button to show the underlying code chunk.</p>
-<div id="example-without-code-folding" class="section level3">
-<h3><span class="header-section-number">9.6.1</span> Example without Code Folding</h3>
+<div id="example-without-code-folding" class="section level3 hasAnchor" number="9.6.1">
+<h3><span class="header-section-number">9.6.1</span> Example without Code Folding<a href="lesson-4-yaml-headers.html#example-without-code-folding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <center>
 <img src="images/rmarkdown/folding_non.png" />
 </center>
 </div>
-<div id="examples-with-code-folding" class="section level3">
-<h3><span class="header-section-number">9.6.2</span> Examples with Code Folding</h3>
-<div id="show" class="section level4">
-<h4><span class="header-section-number">9.6.2.1</span> Show</h4>
+<div id="examples-with-code-folding" class="section level3 hasAnchor" number="9.6.2">
+<h3><span class="header-section-number">9.6.2</span> Examples with Code Folding<a href="lesson-4-yaml-headers.html#examples-with-code-folding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="show" class="section level4 hasAnchor" number="9.6.2.1">
+<h4><span class="header-section-number">9.6.2.1</span> Show<a href="lesson-4-yaml-headers.html#show" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <center>
 <img src="images/rmarkdown/folding_show.png" />
 </center>
 </div>
-<div id="hide" class="section level4">
-<h4><span class="header-section-number">9.6.2.2</span> Hide</h4>
+<div id="hide" class="section level4 hasAnchor" number="9.6.2.2">
+<h4><span class="header-section-number">9.6.2.2</span> Hide<a href="lesson-4-yaml-headers.html#hide" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <center>
 <img src="images/rmarkdown/folding_hide.png" />
 </center>
 </div>
 </div>
 </div>
-<div id="output" class="section level2">
-<h2><span class="header-section-number">9.7</span> output</h2>
+<div id="output" class="section level2 hasAnchor" number="9.7">
+<h2><span class="header-section-number">9.7</span> output<a href="lesson-4-yaml-headers.html#output" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The output option allows you to specify the type of document you want to create. This will be auto-populated if you generate the .Rmd file in RStudio by creating a new R Markdown file through the toolbar. You can manually modify the output type, but you must specify valid arguments.</p>
 <p>Some valid arguments include:</p>
 <ul>
@@ -366,24 +399,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img src="images/rmarkdown/yaml-two-outputs.png" />
 </center>
 </div>
-<div id="custom-template" class="section level2">
-<h2><span class="header-section-number">9.8</span> Custom Template</h2>
+<div id="custom-template" class="section level2 hasAnchor" number="9.8">
+<h2><span class="header-section-number">9.8</span> Custom Template<a href="lesson-4-yaml-headers.html#custom-template" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You have the ability to specify custom templates in your YAML header.</p>
 <p>I have only used this feature for Microsoft Word documents. I created a new document within Microsoft Word and selected all of the formatting options I wanted for my document. I then added the template to the YAML header of my R Markdown document to specify that when the document is knit (rendered) to apply the formatting specifications found in the template Microsoft Word document.</p>
 <center>
 <img src="images/rmarkdown/yaml_word-template.png" />
 </center>
 </div>
-<div id="ymlthis" class="section level2">
-<h2><span class="header-section-number">9.9</span> ymlthis</h2>
+<div id="ymlthis" class="section level2 hasAnchor" number="9.9">
+<h2><span class="header-section-number">9.9</span> ymlthis<a href="lesson-4-yaml-headers.html#ymlthis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>ymlthis</strong> is an R package intended to make it easier for you to generate YAML headers. The package also includes an interactive addin that provides an intuitive user-interface for generating YAML headers. You can visit the following link to learn more about how to use ymlthis: []<a href="https://ymlthis.r-lib.org/" class="uri">https://ymlthis.r-lib.org/</a></p>
 <p>Addins can be accessed by navigating to “Tools” in the RStudio banner, scrolling down to “Addins”, and selecting “Browse Addins.” A pop-up window will appear. If you have <strong>ymlthis</strong> installed on your machine, you will see the <strong>ymlthis</strong> addin in the pop-up window table. Once you select the <strong>ymlthis</strong> addin, you will see a pop-up window like this…</p>
 <center>
 <img src="images/rmarkdown/ymlthis_popup.png" />
 </center>
 </div>
-<div id="your-turn-3" class="section level2">
-<h2><span class="header-section-number">9.10</span> Your Turn</h2>
+<div id="your-turn-3" class="section level2 hasAnchor" number="9.10">
+<h2><span class="header-section-number">9.10</span> Your Turn<a href="lesson-4-yaml-headers.html#your-turn-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li><p>Edit the YAML title and author and knit the document.</p></li>
 <li><p>Specify in the YAML that you want to include a table of contents and knit the document.</p></li>
@@ -405,7 +438,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -416,37 +448,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

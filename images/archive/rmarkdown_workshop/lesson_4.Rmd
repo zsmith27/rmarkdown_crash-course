@@ -1,0 +1,129 @@
+---
+title: "R Markdown Crash Course Example"
+author: "Zachary M. Smith"
+date: "2/26/2020"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: journal
+---
+# lakedata
+* unique_id (character) unique sample ID
+```{r import, message=FALSE}
+thesis.df <- read.csv(file = file.path("data", "zms_thesis_metrics.csv"), stringsAsFactors = FALSE)
+```
+
+```{r}
+library(tidyverse)
+```
+```{r}
+thesis.df <- thesis.df %>% 
+  mutate(lake = case_when(
+    lake %in% "caz" ~ "Cazenovia",
+    lake %in% "onon" ~ "Onondaga",
+    lake %in% "ot" ~ "Otisco",
+    TRUE ~ "ERROR"
+  ),
+  lake = factor(lake, levels = c("Onondaga",
+                                 "Otisco",
+                                 "Cazenovia")))
+```
+```{r}
+knitr::opts_chunk$set(fig.width = 8, fig.height = 4)
+```
+```{r}
+ggplot(thesis.df, aes(substrate_size_d50, pct_diptera, color = lake)) +
+  geom_point()
+```
+```{r}
+ggplot(thesis.df, aes(lake, richness, fill = lake)) +
+  geom_boxplot()
+```
+
+
+
+
+thesis.df <- thesis.df %>% 
+  mutate(lake = case_when(
+    lake %in% "caz" ~ "Cazenovia",
+    lake %in% "onon" ~ "Onondaga",
+    lake %in% "ot" ~ "Otisco",
+    TRUE ~ "ERROR"
+  ),
+  lake = factor(lake, levels = c("Onondaga",
+                                 "Otisco",
+                                 "Cazenovia")))
+
+# Introduction
+
+This document was created during the _2020 NABs R Markdown workshop_ and will serve as an example workflow for my future use of __R Markdown__.
+
+# Workflow
+
+1. Open R Studio
+2. Create an R Project
+3. Add a data folder to the R project directory
+4. Create an R Markdown document
+5. Use Knit to compile the document.
+
+# Import Data
+
+# Preprocessing
+
+[github link](https://rstudio.github.io/DT/)
+
+```{r}
+library(DT)
+```
+
+```{r}
+datatable(thesis.df, options = list(scrollX = TRUE))
+```
+
+
+# Study Area
+
+[maps](https://plot.ly/ggplot2/)
+
+
+
+```{r}
+library(leaflet)
+```
+```{r}
+pal <- colorFactor(c("#619Cff", "#F8766D", "#00BA38"),
+                   domain = c("Cazenovia", "Onondaga", "Otisco"))
+
+leaflet(data = thesis.df,
+        options = leafletOptions(minZoom = 7,
+                                 maxZoom = 13)) %>% 
+  addTiles() %>% 
+  addCircleMarkers(~long, ~lat,
+                   fillOpacity = 0.75,
+                   fillColor = ~pal(lake),
+                   stroke = FALSE,
+             popup = paste("Sample ID:", thesis.df$unique_id, "<br/>",
+                           "Lake:", thesis.df$lake, "<br/>",
+                           "Latitude:", thesis.df$lat, "<br/>",
+                           "Longitude:", thesis.df$long)
+             )
+```
+```{r}
+library(plotly)
+
+scatter.plot <- ggplot(thesis.df, aes(substrate_size_d50, pct_diptera)) +
+  geom_point(aes(color = lake)) +
+  geom_smooth(method = "lm")
+
+ggplotly(scatter.plot)
+```
+
+
+# Plot  {.tabset}
+
+## Scatter Plot
+
+## LOESS Plot
+
+# Conclusions

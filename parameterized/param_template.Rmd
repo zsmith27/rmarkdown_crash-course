@@ -78,6 +78,10 @@ library(DT)
 datatable(thesis.df, options = list(scrollX = TRUE))
 ```
 
+```{r}
+knitr::kable(thesis.df)
+```
+
 # Study Area
 
 For more details about the __leaflet__ package visit https://rstudio.github.io/leaflet/.
